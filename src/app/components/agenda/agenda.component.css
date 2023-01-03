@@ -1,0 +1,43 @@
+.container{
+    display: grid;
+    grid-template-columns: 0.057fr 1fr;
+    grid-template-areas: 'hours' 'list-hours';
+}
+
+h3{
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.7rem;
+}
+
+.hours{
+    grid-area: 'hours';
+}
+
+.hours aside{
+    margin: 0.86rem 0;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.list-hours{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: 'list-hours';
+}
+
+.list-hours li{
+    list-style: none;
+    width: 100%;
+    
+    padding: 0.93rem 0;
+    border: 0.2px solid rgba(128, 128, 128, 0.605);
+}
+
+.list-hours li:hover {
+    scale: 1.01;
+    border-color: rgba(82, 137, 90, 0.525);
+    background-color: rgba(65, 90, 68, 0.115);
+}

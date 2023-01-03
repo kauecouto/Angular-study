@@ -1,0 +1,33 @@
+
+h3{
+    text-align: start;
+    margin-left: 0.5rem;
+    color: rgba(75, 75, 75, 0.805);
+    font-size: 1rem;
+    font-weight: 600;
+    margin:0.5rem 0.4rem;
+    margin-top: 0.7rem;
+}
+
+input{
+    width: 400px;
+    padding: 0.5rem;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 3px;
+    outline: 0;
+}
+
+input:focus{
+    background-color: #e8f6f69d ;
+}
+
+.container_input{
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+img{
+    position: absolute;
+    margin: 10px;
+}

@@ -1,0 +1,89 @@
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.area_image{
+    background-image: url(../../../assets/image/img-login.jpeg);
+    background-position: center;
+    background-size: 730px;
+}
+
+.area_campos{
+    align-self: center;
+    height: 550px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title h2{
+    font-size: 2.64rem;
+    font-weight: 600;
+}
+
+.title p{
+    color: grey;
+    font-weight: 500;
+}
+
+
+h3{
+    text-align: start;
+    margin-left: 0.5rem;
+    color: rgba(75, 75, 75, 0.805);
+    font-size: 1rem;
+    font-weight: 600;
+    margin:0.5rem 0.4rem;
+    margin-top: 0.7rem;
+}
+
+input{
+    width: 400px;
+    padding: 0.5rem;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 3px;
+    outline: 0;
+}
+
+input:focus{
+    background-color: #e8f6f69d ;
+}
+
+.container_input{
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+img{
+    position: absolute;
+    margin: 10px;
+}
+
+.box_button button{
+    width: 390px;
+    padding: 0.8rem;
+    color: white;
+    background-color: #338CF5;
+    border: none;
+    border-radius: 6px;
+}
+
+.box_button button:active{
+    background-color: #2b6fbd;
+}
+
+.box_button p{
+    margin: 0.9rem;
+    color: grey;
+}
+
+.box_button a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #338CF5;
+}

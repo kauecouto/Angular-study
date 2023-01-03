@@ -1,0 +1,33 @@
+.view-home{
+    height: 100%;
+    background-color: #EEEEEE;
+}
+
+header{
+    background-color: #007A78;
+    height: 140px;
+}
+
+h2{
+    display: inline;
+    color: white;
+    position: relative;
+    top: 30px;
+    left: 390px;
+}
+
+.container-home{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    grid-template-areas: 'menu estudar';
+    width: 100%;
+    padding: 2rem;
+}
+
+app-menu{
+    grid-area: menu;
+}
+
+app-estudar{
+    grid-area: estudar;
+}

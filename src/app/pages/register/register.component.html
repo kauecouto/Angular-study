@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="area_campos">
+        <div class="title">
+            <h2>Crie sua Conta</h2>
+            <p>Inicie sua jornada de conhecimentos com o Study.</p>
+        </div>
+        <div class="box_inputs">
+            <div>
+                <h3>Nome</h3>
+                <div class="container_input">
+                    <input type="text" [(ngModel)]="name" placeholder="Nome">
+                    <img src="../../../assets/image/person.png" alt="imagem-input" *ngIf="!name" >
+                </div>
+            </div>
+            <div>
+                <h3>Email</h3>
+                <div class="container_input">
+                    <input type="text" [(ngModel)]="email" placeholder="Email">
+                    <img src="../../../assets/image/email.png" alt="imagem-input" *ngIf="!email" >
+                </div>
+            </div>
+            <div>
+                <h3>Senha</h3>
+                <div class="container_input">
+                    <input type="password" [(ngModel)]="password" placeholder="Senha">
+                    <img src="../../../assets/image/lock.png" alt="imagem-input" *ngIf="!password" >
+                </div>
+            </div>
+        </div>
+        <div class="box_button">
+            <button (click)="onSignUp(email,password,name)">Cadastrar</button>
+            <p>Já possui conta? <a routerLink="/login">Entre agora!</a></p>
+        </div>
+    </div>
+    <div class="area_image">
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div>
+    <header>
+        <h2>{{ monthElement }} - {{ currentYear }}</h2>
+        <div>
+            <button (click)="previousMonth()"> < </button>
+            <button (click)="nextMonth()"> > </button>
+        </div>
+    </header>
+    <table>
+        <thead>   
+                <aside>Dom</aside>
+                <aside>Seg</aside>
+                <aside>Ter</aside>
+                <aside>Qua</aside>
+                <aside>Qui</aside>
+                <aside>Sex</aside>
+                <aside>Sab</aside>
+        </thead>
+        <tbody>
+            <aside *ngFor="let day of listDays; let i = index" 
+            (click)="onSharedDate(day,month,year)"
+            [class.dia-atual]="day == currentDay && month == currentMonth && year == currentYear &&  i <= getlastDayThisMonth"
+            [class.mes-anterior]="(i - firstDayIndex) < 0"
+            [class.mes-posterior]="i - firstDayIndex  > getlastDayThisMonth -1 "
+            >{{ day }}</aside>
+        </tbody>
+    </table>
+</div>

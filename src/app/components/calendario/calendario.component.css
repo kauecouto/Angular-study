@@ -1,0 +1,105 @@
+div{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem;
+}
+
+header > div{
+    max-width: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header button{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(218, 218, 218);
+}
+
+header button:active{
+    background-color: #D9EBEB;
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.645);
+}
+
+table{
+    background-color: white;
+    border-collapse: collapse;
+}
+
+aside{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    border-radius: 50%;    
+    text-align: center;
+    transition: 0.3s;
+}
+
+tbody aside:hover{
+    background-color: #D9EBEB;
+}
+
+tbody aside:active{
+    top: -1px;
+    position: relative;
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.645);
+}
+
+.mes-anterior, .mes-posterior{
+    pointer-events: none;
+    opacity: 0.3;
+    filter: blur(0.5px);
+}
+
+.dia-atual {
+    opacity: 1;
+    color: white;
+    background-color: #007A78;
+    filter: none;
+}
+
+.days{
+    opacity: 1;
+    color: black;
+    filter: none;
+}
+
+.dia-atual:hover{
+    color: rgb(78, 77, 77);
+}
+
+
+thead{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+thead aside{
+    font-size: 1rem;
+    font-weight: 500;
+    height: 40px;
+}
+
+tbody{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+

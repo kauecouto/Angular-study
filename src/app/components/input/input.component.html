@@ -1,0 +1,7 @@
+<div>
+    <h3>{{ title }}</h3>
+    <div class="container_input">
+        <input [type]="type" [(ngModel)]="text" [placeholder]="placeholder">
+        <img [src]="image" alt="imagem-input" *ngIf="!text" >
+    </div>
+</div>

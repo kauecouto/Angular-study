@@ -1,0 +1,15 @@
+<div>
+    <h3>{{ date.day }} de {{date.month}} - {{ date.year }}</h3>
+    <div class="container">
+        <div class="hours">
+            <div *ngFor="let hour of hours">
+                <aside>{{ hour }}</aside>
+            </div>
+        </div>
+        <div>
+            <ul class="list-hours">
+                <li *ngFor="let hour of hours"></li>
+            </ul>
+        </div>
+    </div>
+</div>

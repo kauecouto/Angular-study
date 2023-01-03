@@ -1,0 +1,33 @@
+.view-home{
+    background-color: #EEEEEE;
+}
+
+header{
+    background-color: #007A78;
+    height: 140px;
+}
+
+h2{
+    display: inline;
+    color: white;
+    position: relative;
+    top: 30px;
+    left: 390px;
+}
+
+.container-home{
+    display: flex;
+    grid-template-columns: 0.5fr 5fr;
+    grid-template-areas: 'menu agenda';
+    width: 100%;
+    padding: 2rem;
+}
+
+app-menu{
+    grid-area: menu;
+}
+
+app-painel-agenda{
+    width: 100%;
+    grid-area: agenda;
+}
