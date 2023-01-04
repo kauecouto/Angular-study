@@ -1,5 +1,5 @@
+
 .container-menu{
-    display: inline;
     background-color: white;
     width: 250px;
     height: 680px;
@@ -12,17 +12,33 @@
     top: -90px;
 }
 
+#exit{
+    display: none;
+    align-self: flex-start;
+    width: 20px;
+    height: 20px;
+}
+
+.perfil{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
 h3{
     font-size: 1rem;
 }
+
 .img-perfil{
     width: 140px;
     height: 140px;
     border-radius: 50%;
     background-color: rgb(213, 213, 213);
     border: 5px solid  #007A78;
-    margin-bottom: 1rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.405);
+    margin-bottom: 1rem;
 }
 
 .container-buttons{

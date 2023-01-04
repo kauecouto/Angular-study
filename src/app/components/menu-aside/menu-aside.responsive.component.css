@@ -1,0 +1,40 @@
+
+
+@media (max-width: 830px){
+    .container-menu{
+        width: 230px;
+        height: 230px;
+        box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.381);
+    }
+
+    .img-perfil{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: rgb(213, 213, 213);
+        border: 5px solid  #007A78;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.405);
+    }
+
+    .perfil{
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .img-perfil{
+        margin-bottom: 0;
+    }
+
+    h3{
+        padding-left: 0.8rem;
+    }
+
+    #exit{
+        display: block;
+        position: absolute;
+        align-self: flex-end;
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -4,7 +4,7 @@ import { Date } from '../agenda/date';
 @Component({
   selector: 'app-painel-agenda',
   templateUrl: './painel-agenda.component.html',
-  styleUrls: ['./painel-agenda.component.css']
+  styleUrls: ['./painel-agenda.component.css','./painel-agenda.responsive.component.css']
 })
 export class PainelAgendaComponent implements OnInit {
   date: Date = {

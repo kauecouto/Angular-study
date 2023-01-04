@@ -8,15 +8,23 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./home-estudar.component.css']
 })
 export class HomeEstudarComponent implements OnInit {
+  isALiveMenu: boolean = true
 
   constructor(private serviceAuth : AuthenticationService,
     private router: Router) { }
  
-    ngOnInit(): void {
-      if(localStorage.getItem('userName') == undefined){
-        this.router.navigate(['/login'])
-      }
+  ngOnInit(): void {
+    if(localStorage.getItem('userName') == undefined){
+      this.router.navigate(['/login'])
     }
+  }
+
+  controlMenu(){
+    if(this.isALiveMenu == true)
+    this.isALiveMenu = false
+    else
+    this.isALiveMenu = true
+  }
  
 
 }

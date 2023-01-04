@@ -14,11 +14,13 @@ h1{
     position: relative;
     top: -130px;
 }
+
 .circle-time{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
+    max-width: 200px;
+    width: 100%;
     height: 200px;
     border: 10px solid green;
     border-top: 1px solid  #EEEEEE;
@@ -36,13 +38,13 @@ h1{
 
 @keyframes rotating {
     10%{
-        width: 150px;
+        width: 200%;
         border-color: rgb(72, 233, 72);
     }
     50%{ 
         transform: rotate(2turn);
         scale: 1.5;
-        width: 100px;
+        width: 50%;
         
     }
     95%{
@@ -55,13 +57,13 @@ h1{
 
 @keyframes rotating-interval {
     10%{
-        width: 150px;
+        width: 100%;
         border-color: rgb(255, 157, 29);
     }
     50%{ 
         transform: rotate(2turn);
         scale: 1.5;
-        width: 100px;
+        width: 50%;
         
     }
     95%{

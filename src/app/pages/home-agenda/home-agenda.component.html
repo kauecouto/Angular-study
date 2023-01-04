@@ -1,12 +1,15 @@
 <div class="view-home">
     <header>
         <app-nav></app-nav>
-        <div>
-            <h2>Agenda</h2>
+        <div class="container-menu">
+            <div class="box-menu">
+                <img src="../../../assets/image/menu-hamburguer.png" alt="imagem-menu" id="menu" (click)="controlMenu()">
+                <h2>Agenda</h2>
+            </div>
         </div>
     </header>
     <div class="container-home">
-            <app-menu></app-menu>
+            <app-menu *ngIf="isALiveMenu" [class.menu-responsive]="isALiveMenu" (menu)="controlMenu()"></app-menu>
             <app-painel-agenda></app-painel-agenda>
     </div>
 </div>

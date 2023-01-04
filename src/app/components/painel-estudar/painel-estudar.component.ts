@@ -11,6 +11,7 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
   
   timer_iniciar : any
   timer_interval : any 
+  paused: boolean = false
 
   btnIniciarActive : boolean = true
   classRotate: string = ''
@@ -53,28 +54,32 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
     }
     if(this.minutes < 0){
       this.alarme.play()
-      alert('tempo acabou!')
       this.btnIniciarActive = true
       this.classRotate = ''
-
+      
       if(this.isStudy == true){
         clearInterval(this.timer_iniciar)
         this.onInterval()
+        alert('tempo acabou!')
       }else{
         clearInterval(this.timer_interval)
         this.iniciar()
+        alert('tempo acabou!')
       }
     }
   }
 
   iniciar(){
-    this.minutes = 25
-    this.seconds = 0
-    this.minutes -= 1
-    this.seconds = 59
+
+    if(this.paused == false){
+      this.minutes -= 1
+      this.seconds = 59
+    }
+
     this.timer_iniciar = setInterval(() => {
       this.timer()
     },1000)
+    this.paused = false
     this.btnIniciarActive = false     
     this.classRotate = 'active-rotating'
     this.isStudy = true
@@ -94,6 +99,7 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
   pausar(){
     clearInterval(this.timer_interval)
     clearInterval(this.timer_iniciar)
+    this.paused = true
     this.btnIniciarActive = true
     this.classRotate = ''
     this.som.pause()

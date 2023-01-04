@@ -4,15 +4,30 @@
 
 header{
     background-color: #007A78;
-    height: 140px;
+}
+
+.container-menu{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-menu{
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#menu{
+    position: absolute;
+    left: 300px;
 }
 
 h2{
     display: inline;
     color: white;
-    position: relative;
-    top: 30px;
-    left: 390px;
 }
 
 .container-home{
@@ -25,9 +40,44 @@ h2{
 
 app-menu{
     grid-area: menu;
+    position: relative;
+    left: -10px;
+    animation: anima 0.3s;
+    animation-fill-mode: forwards;
 }
 
 app-painel-agenda{
     width: 100%;
     grid-area: agenda;
+}
+
+@keyframes anima {
+    to{
+        left: 0;
+    }
+}
+
+@keyframes anima-responsive {
+    0%{
+        left: 0px;
+    }
+    100%{
+        left: 0px;
+        top: 179px;
+    }
+}
+
+@media (max-width: 830px){
+    .menu-responsive{
+        top: 160px;
+        position: absolute;
+        z-index: 9999;
+        animation: anima-responsive 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    #menu{
+        position: absolute;
+        left: 20px;
+    }
 }

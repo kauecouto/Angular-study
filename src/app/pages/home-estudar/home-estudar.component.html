@@ -2,12 +2,13 @@
 <div class="view-home">
     <header>
         <app-nav></app-nav>
-        <div>
+        <div class="container-menu">
+            <img src="../../../assets/image/menu-hamburguer.png" alt="imagem-menu" id="menu" (click)="controlMenu()">
             <h2>Estudar</h2>
         </div>
     </header>
     <div class="container-home">
-            <app-menu></app-menu>
+            <app-menu *ngIf="isALiveMenu" [class.menu-responsive]="isALiveMenu" (menu)="controlMenu()"></app-menu>
             <app-estudar></app-estudar>
     </div>
 </div>
