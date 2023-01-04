@@ -1,5 +1,13 @@
-@media (max-width: 1100px){
-   
+@media (max-width: 830px){
+   .container{
+    width: 90vw;
+   }
+
+   .container-buttons{
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 
 

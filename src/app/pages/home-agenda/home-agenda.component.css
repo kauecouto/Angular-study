@@ -76,6 +76,14 @@ app-painel-agenda{
         animation-fill-mode: forwards;
     }
 
+    .container-home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
     #menu{
         position: absolute;
         left: 20px;

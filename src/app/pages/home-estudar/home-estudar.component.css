@@ -77,6 +77,15 @@ app-painel-estudar{
         animation-fill-mode: forwards;
     }
 
+    .container-home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        padding-top: 1rem;
+    }
+
     #menu{
         position: absolute;
         left: 20px;

@@ -10,6 +10,7 @@
     padding: 1rem;
     position: relative;
     top: -90px;
+    margin-right: 2rem;
 }
 
 #exit{
@@ -43,6 +44,7 @@ h3{
 
 .container-buttons{
     margin-top: 20px;
+    width: 90%;
     height: 150px;
     display: flex;
     flex-direction: column;
@@ -51,7 +53,7 @@ h3{
 
 
 button{
-    width: 180px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;

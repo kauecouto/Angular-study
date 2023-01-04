@@ -2,9 +2,12 @@
 
 @media (max-width: 830px){
     .container-menu{
-        width: 230px;
-        height: 230px;
+        width: 100vw;
+        height: 100%;
         box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.381);
+        margin-right: 0;
+        top: -119px;
+        z-index: 9999;
     }
 
     .img-perfil{
@@ -23,6 +26,7 @@
     }
 
     .img-perfil{
+        margin-left: 2rem;
         margin-bottom: 0;
     }
 
@@ -33,7 +37,8 @@
     #exit{
         display: block;
         position: absolute;
-        align-self: flex-end;
+        top: 35px;
+        align-self: flex-start;
         width: 20px;
         height: 20px;
     }
