@@ -3,9 +3,10 @@
     <div class="pop_up" [class.active_PopUp]="openPopUp">
         <h3>Altere o som ambiente:</h3>
         <ul>    
-            <li [class.music-um]="musicClass[0]" (click)="changeMusic('../../../../assets/audio/lo-fi.mp3', 0)">Musica de fundo 1</li>
-            <li [class.music-dois]="musicClass[1]" (click)="changeMusic('../../../../assets/audio/lo-fi-2.mp3', 1)">Musica de fundo 2</li>
-            <li [class.music-tres]="musicClass[2]" (click)="changeMusic('../../../../assets/audio/barulho-chuva.mp3', 2)">Som de Chuva</li>
+            <li [class.music-active]="musicClass[0]" (click)="changeMusic(' ', 0)">Nenhuma</li>
+            <li [class.music-active]="musicClass[1]" (click)="changeMusic('../../../../assets/audio/lo-fi.mp3', 1)">Musica de fundo 1</li>
+            <li [class.music-active]="musicClass[2]" (click)="changeMusic('../../../../assets/audio/lo-fi-2.mp3', 2)">Musica de fundo 2</li>
+            <li [class.music-active]="musicClass[3]" (click)="changeMusic('../../../../assets/audio/barulho-chuva.mp3', 3)">Som de Chuva</li>
         </ul>
         <h3>Volume:</h3>
         <input type="range" min="0.1" max="1" step="0.01" (change)="changeVolume()" [(ngModel)]="currentVolume" [value]="currentVolume" id="input_volume">

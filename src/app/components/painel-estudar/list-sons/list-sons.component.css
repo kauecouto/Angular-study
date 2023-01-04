@@ -1,6 +1,7 @@
 .container{
     top: -90px;
     position: relative;
+    z-index: 9999;
     max-width: 1000px;
     display: flex;
     flex-direction: column;
@@ -63,7 +64,11 @@ li:active{
     background-color: #009c9a;
 }
 
-.music-um, .music-dois, .music-tres{
+li:hover{
+    background-color: #009c9a;
+}
+
+.music-active, .music-active:hover{
     background-color: #a8f7f6;
     color: black;
 }

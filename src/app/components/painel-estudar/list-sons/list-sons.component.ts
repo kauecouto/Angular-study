@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class ListSonsComponent implements OnInit {
   @Output() musica = new EventEmitter()
-  musicClass = [false , false, false]
+  musicClass = [false , false, false, false]
   openPopUp: boolean = false
   currentVolume: number = 1
   @Output() volume = new EventEmitter()
@@ -23,16 +23,24 @@ export class ListSonsComponent implements OnInit {
         this.musicClass[clase] = true
         this.musicClass[1] = false
         this.musicClass[2] = false
+        this.musicClass[3] = false
       }break;
       case 1 : {
-        
         this.musicClass[0] = false
         this.musicClass[clase] = true
         this.musicClass[2] = false
+        this.musicClass[3] = false
       }break;
       case 2 : {
         this.musicClass[0] = false
         this.musicClass[1] = false
+        this.musicClass[clase] = true
+        this.musicClass[3] = false
+      }break;
+      case 3 : {
+        this.musicClass[0] = false
+        this.musicClass[1] = false
+        this.musicClass[2] = false
         this.musicClass[clase] = true
       }break;
 
