@@ -61,7 +61,7 @@ button{
     border-radius: 5rem;
     border: none;
     background-color: transparent;
-    transition: 0.3s;
+    transition: 1s;
 }
 
 button:hover{
@@ -75,7 +75,6 @@ button:active{
 }
 
 .active{
-    scale: 1.04;
     color: #4c7070;
     background-color: #D9EBEB;
     font-weight: 700;

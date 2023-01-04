@@ -76,3 +76,10 @@ li:hover{
 #input_volume{
     accent-color:  #a5f8c8;
 }
+
+@media (max-width: 750px){
+    .container{
+        top: -17px;
+        
+    }
+}
