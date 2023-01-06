@@ -1,29 +1,42 @@
-# AngularStudy
+<h1>Study</h1>
+<p><b><i>MVP da Aplicação</i></b></p>
 
-Deploy: https://study-io.netlify.app
+<p>
+ Em Desenvolvimento!
+</p>
+# 📌 Tópicos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+<!--ts-->
 
-## Development server
+- [Descricao](#-Descricao)
+- [Tecnologias](#-Tecnologias)
+- [Tarefas](#-Features)
+- [Aplicacao](#-Como-Posso-Rodar-a-Aplicacao?)
+<!--te-->
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# 📄 Descricao
 
-## Code scaffolding
+> A aplicação tem como objetivo principal auxiliar os estudantes em suas rotinas extensas de estudos, tornando menos cansativas e mais produtivas.
+# 🚀 Tecnologias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [TypeScript](https://www.typescriptlang.org)
+- [AngularV14](https://angular.io/)
+- [Firebase](https://firebase.google.com/docs?hl=pt-br)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-## Build
+# 🎯 Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<pre>
+- [x] Login/Register com uso de formulário e validação
+- [x] Pomodoro
+- [x] Design Responsivo
+- [ ] Agenda
+- [ ] Tarefas
+</pre>
+# 📑 Como Posso Rodar a Aplicacao?
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Acessar a Aplicação](https://study-io.netlify.app)
+-----------------------------------------------------------------------------
