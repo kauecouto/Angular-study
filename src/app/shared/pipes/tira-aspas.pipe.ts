@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TiraAspasPipe implements PipeTransform {
 
-  transform(value: string): unknown { 
-    return value.slice( 1, -1 );
+  transform(value: string | null): unknown{ 
+    return value?.slice( 1, -1 );
   }
 
 }

@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
     this.serviceAuthetication.signIn(email, password)
     .then(res => {
       this.success = res
-      console.log(res)
     })
   }
 

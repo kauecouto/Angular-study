@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Date } from './date';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Date } from '../../models/date';
 
 @Component({
   selector: 'app-agenda',
@@ -11,14 +11,26 @@ export class AgendaComponent implements OnInit {
   @Input() date: Date = {
     day: 0,
     month: '',
+    monthNumber: 0,
     year: 0
   }
+  @Output() sharedRecord = new EventEmitter()
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  
-
+  onOpenRecord(hour: string){
+    let hourNumber
+    if(Number(hour.slice(0, hour.length -1)) < 10){
+      hourNumber = '0' + hour.slice(0, hour.length -1) + ':' + '00'
+    }else{
+      hourNumber = hour.slice(0, hour.length -1) + ':' + '00'
+    }
+    
+    const data = this.date
+    data.hour = hourNumber
+    this.sharedRecord.emit(data)
+  }
 }

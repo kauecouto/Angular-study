@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="pop_up">
+        <img src="../../../../../assets/image/x.png" alt="imagem-x" id="button-close" (click)="onEmiterClosePopUp()">
+        <div class="box_title">
+            <p>Data</p>
+            <div class="area_title">
+                <input type="text" placeholder="Titulo" >
+            </div>
+        </div>    
+        <div class="box_description">
+            <h4>Descrição</h4>
+            <textarea name="" id=""  rows="3" placeholder="Adicione uma discrição..."></textarea>
+        </div>
+        <div class="box_custom">
+            <select name="Categoria" id="">
+                <option value="">Categoria</option>  
+                <option value="Reunião">Reunião</option>
+            </select>
+            <div class="container_color">
+                <div class="area_color">
+                    <h3>Cor</h3>
+                    <input type="radio" name="color" id="cor1" value="A09BFA"> <label for="color" id=""></label> 
+                    <input type="radio" name="color" id="cor2" value="5382F0"> <label for="color" id=""></label>
+                    <input type="radio" name="color" id="cor3" value="FCD658"> <label for="color" id=""></label>
+                    <input type="radio" name="color" id="cor4" value="FFB778"> <label for="color" id=""></label>
+                    <input type="radio" name="color" id="cor5" value="FF877D"> <label for="color" id=""></label>
+                    <input type="radio" name="color" id="cor6" value="FFFFFF"> <label for="color" id=""></label>
+                </div>
+            </div> 
+        </div>
+        <div class="box_hours">
+            <div class="hours_row">
+                <div class="box_input-hour">
+                    <h4>Inicio:*</h4>
+                    <input type="date" value="{{date.year}}-{{date.monthNumber}}-{{date.day}}">
+                </div>
+                <div class="box_input-hour">
+                    <h4>Termino:*</h4>
+                    <input type="date">
+                </div>
+            </div>
+            <div class="hours_row">
+                <div class="box_input-hour">
+                    <h4>Hora de Inicio:*</h4>
+                    <input type="time" [value]="date.hour">
+                </div>
+                <div class="box_input-hour">
+                    <h4>Hora de Termino:*</h4>
+                    <input type="time">
+                </div>
+            </div>
+        </div>
+        <button>Salvar</button>
+    </div>
+</div>

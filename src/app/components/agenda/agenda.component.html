@@ -3,12 +3,12 @@
     <div class="container">
         <div class="hours">
             <div *ngFor="let hour of hours">
-                <aside>{{ hour }}</aside>
+                <aside >{{ hour }}</aside>
             </div>
         </div>
         <div>
             <ul class="list-hours">
-                <li *ngFor="let hour of hours"></li>
+                <li *ngFor="let hour of hours" (click)="onOpenRecord(hour)"></li>
             </ul>
         </div>
     </div>

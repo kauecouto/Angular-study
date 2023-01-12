@@ -61,7 +61,7 @@ button{
     border-radius: 5rem;
     border: none;
     background-color: transparent;
-    transition: 1s;
+    transition: 0.3s;
 }
 
 button:hover{

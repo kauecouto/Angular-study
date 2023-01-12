@@ -14,6 +14,7 @@ import { MenuNavComponent } from './nav-bar/menu-nav/menu-nav.component';
 import { PainelAgendaComponent } from './painel-agenda/painel-agenda.component';
 import { CalendarioComponent } from 'src/app/components/calendario/calendario.component';
 import { AgendaComponent } from 'src/app/components/agenda/agenda.component';
+import { FormAgendaComponent } from './painel-agenda/form-agenda/form-agenda.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AgendaComponent } from 'src/app/components/agenda/agenda.component';
     MenuAsideComponent,
     ListSonsComponent,
     CalendarioComponent,
-    AgendaComponent
+    AgendaComponent,
+    FormAgendaComponent
   ],
   imports: [
     CommonModule,

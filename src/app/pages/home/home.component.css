@@ -66,6 +66,7 @@ app-menu{
     }
 }
 
+
 @media (max-width: 830px){
     app-menu{
         display: none;

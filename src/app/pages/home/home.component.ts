@@ -9,14 +9,17 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class HomeComponent implements OnInit {
   isALiveMenu: boolean = true
+  
 
   constructor(private serviceAuth : AuthenticationService,
    private router: Router) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('userName') == undefined){
+    /* if(localStorage.getItem('userName') == undefined){
       this.router.navigate(['/login'])
-    }
+    }else{
+      this.router.navigate(['estudar'])
+    } */
 
     if(window.innerWidth <= 830){
       this.isALiveMenu = false

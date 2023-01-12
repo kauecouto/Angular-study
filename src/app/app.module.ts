@@ -12,6 +12,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AuthenticationService } from './services/authentication.service';
 import { HomeModule } from './pages/home/home.module';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

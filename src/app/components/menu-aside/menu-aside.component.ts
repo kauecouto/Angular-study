@@ -6,7 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./menu-aside.component.css','./menu-aside.responsive.component.css']
 })
 export class MenuAsideComponent implements OnInit {
-  nameUser: any = ''
+  nameUser: string | null = ''
   @Output() menu = new EventEmitter()
 
   constructor() { }

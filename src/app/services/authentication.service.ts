@@ -22,7 +22,7 @@ export class AuthenticationService {
     .then(res => {
       localStorage.setItem('isLoggedIn', 'true')
       localStorage.setItem('user', JSON.stringify(res.user))
-      this.router.navigate(['inicio'])
+      this.router.navigate(['/inicio/estudar'])
       success = true
     })
     .catch(err => {
@@ -43,7 +43,7 @@ export class AuthenticationService {
       }
       localStorage.setItem('user', JSON.stringify(res.user))
       localStorage.setItem('userName', JSON.stringify(this.user.name))
-      this.router.navigate(['inicio'])
+      this.router.navigate(['/inicio/estudar'])
     })
   }
 

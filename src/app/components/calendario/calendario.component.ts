@@ -29,6 +29,7 @@ export class CalendarioComponent implements OnInit {
     this.sharedDate.emit({
         day: this.dateFull.getDate(),
         month: this.monthsBR[this.currentMonth],
+        monthNumber: this.currentMonth +1,
         year: this.year
     })
   }
@@ -37,6 +38,7 @@ export class CalendarioComponent implements OnInit {
     this.sharedDate.emit({
         day: day,
         month: this.monthsBR[month],
+        monthNumber: month +1,
         year: this.currentYear
     })
   }

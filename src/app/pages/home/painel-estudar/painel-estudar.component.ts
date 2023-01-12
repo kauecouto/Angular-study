@@ -26,6 +26,7 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.volume = Number(localStorage.getItem('volumeMusic'))
     this.som.volume = this.volume
+  
   }
 
   changeMusic(evento: string){
