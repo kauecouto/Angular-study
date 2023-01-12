@@ -15,7 +15,7 @@ h3{
 }
 
 .hours aside{
-    margin: 0.86rem 0;
+    margin: 14px 5px;
     font-size: 0.8rem;
     color: grey;
 }
@@ -31,8 +31,7 @@ h3{
 .list-hours li{
     list-style: none;
     width: 100%;
-    
-    padding: 0.93rem 0;
+    padding: 15px 0;
     border: 0.2px solid rgba(128, 128, 128, 0.605);
 }
 
