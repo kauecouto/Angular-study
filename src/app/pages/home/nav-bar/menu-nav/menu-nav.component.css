@@ -1,0 +1,62 @@
+.container{
+    width: 95vw;
+}
+
+img{
+    width: 30px;
+}
+
+h3{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.pop_up{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 230px;
+    position:absolute;
+    top: 40px;
+    right: 10px;
+    background-color: #009592;
+    color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: 1s;
+    opacity: 0;
+    
+}
+
+.active_PopUp{
+    display: flex;
+    position: absolute;
+    animation: open 0.3s;
+    animation-fill-mode: forwards;
+    z-index: 999;
+}
+
+ul{
+ list-style: none;
+}
+
+@keyframes open{
+    to{
+        opacity: 1;
+        top: 55px;
+    }
+}
+
+li{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+li:active{
+    background-color: #009c9a;
+}

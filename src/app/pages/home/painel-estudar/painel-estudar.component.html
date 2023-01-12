@@ -1,0 +1,10 @@
+<div class="container">
+    <app-list-sons (musica)="changeMusic($event)" (volume)="changeVolume($event)"></app-list-sons>
+    <div class="circle-time" [ngClass]="classRotate"></div>
+    <h1>{{ minutes}}: {{seconds}}</h1>
+    <div class="container-buttons">
+        <button class="btn-resetar" (click)="resetar()">Resetar</button>
+        <button (click)="iniciar()" *ngIf="btnIniciarActive">Iniciar</button>
+        <button class="btn-parar" (click)="pausar()">Pausar</button>
+    </div>
+</div>

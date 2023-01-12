@@ -1,0 +1,115 @@
+.container{
+    padding: 1rem;
+    height: 560px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 12px;
+}
+
+h1{
+    position: relative;
+    top: -130px;
+}
+
+.circle-time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 200px;
+    width: 100%;
+    height: 200px;
+    border: 10px solid green;
+    border-top: 1px solid  #EEEEEE;
+    padding: 5rem;
+    border-radius: 50%;
+}
+
+.active-rotating-interval{
+    animation: rotating-interval 10s infinite;
+}
+
+.active-rotating{
+    animation: rotating 10s infinite;
+}
+
+@keyframes rotating {
+    10%{
+        width: 200%;
+        border-color: rgb(72, 233, 72);
+    }
+    50%{ 
+        transform: rotate(2turn);
+        scale: 1.5;
+        width: 50%;
+        
+    }
+    95%{
+        transform: rotate(1turn);
+        scale: 1;
+        border-color: green;
+    }
+    
+}
+
+@keyframes rotating-interval {
+    10%{
+        width: 100%;
+        border-color: rgb(255, 157, 29);
+    }
+    50%{ 
+        transform: rotate(2turn);
+        scale: 1.5;
+        width: 50%;
+        
+    }
+    95%{
+        transform: rotate(1turn);
+        scale: 1;
+        border-color: rgb(212, 138, 0);
+    }
+    
+}
+.container-buttons{
+    display: flex;
+    align-items: center;
+    transition: 2s;
+}
+
+button{
+    font-size: 1.2rem;
+    max-width: 180px;
+    width: 100%;
+    padding: 0.4rem 1rem;
+    border-radius: 5rem;
+    border: 2px solid white;
+    background-color: rgba(127, 255, 212, 0.559);
+    margin: 0.8rem;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.348);
+    transition: 0.3s;
+}
+
+button:hover{
+    scale: 1.05;
+}
+
+button:active{
+    transform: translateY(-4px);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.552);
+}
+.btn-resetar{
+    color: #005554;
+    background-color: transparent;
+}
+
+.btn-parar{
+    color: #4f3802;
+    background-color: #ffb54587;
+}
+
+app-list-sons{
+    align-self: flex-end;
+}
