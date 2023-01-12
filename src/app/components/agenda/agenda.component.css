@@ -5,7 +5,7 @@
 }
 
 h3{
-    font-size: 1rem;
+    font-size: 18px;
     font-weight: 600;
     margin: 13px;
 }
@@ -15,7 +15,7 @@ h3{
 }
 
 .hours aside{
-    margin: 13.4px 5px;
+    margin: 13.46px 5px;
     font-size: 13.9px;
     color: grey;
 }
@@ -24,7 +24,7 @@ h3{
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 2px;
+    margin-top: 3px;
     grid-area: 'list-hours';
 }
 
