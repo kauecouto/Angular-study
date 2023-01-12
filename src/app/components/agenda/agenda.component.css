@@ -40,3 +40,9 @@ h3{
     border-color: rgba(82, 137, 90, 0.525);
     background-color: rgba(65, 90, 68, 0.115);
 }
+
+@media (max-width: 500px){
+    .list-hours li{
+        padding: 17px 0;
+    }
+}
