@@ -11,6 +11,7 @@ import { InputComponent } from './components/input/input.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AuthenticationService } from './services/authentication.service';
 import { HomeModule } from './pages/home/home.module';
+import { DataBaseService } from './services/data-base.service';
 
 
 

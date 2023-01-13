@@ -1,30 +1,30 @@
 <div class="container">
-    <div class="pop_up">
+    <form class="pop_up" (submit)="insertRecordDB()">
         <img src="../../../../../assets/image/x.png" alt="imagem-x" id="button-close" (click)="onEmiterClosePopUp()">
         <div class="box_title">
             <p>{{date.day}}, {{ date.month}} de {{ date.year }} </p>
             <div class="area_title">
-                <input type="text" placeholder="Titulo" >
+                <input type="text" placeholder="Titulo" [(ngModel)]="title" >
             </div>
         </div>    
         <div class="box_description">
             <h4>Descrição</h4>
-            <textarea name="" id=""  rows="3" placeholder="Adicione uma discrição..."></textarea>
+            <textarea name="" id=""  rows="3" placeholder="Adicione uma discrição..." [(ngModel)]="description"></textarea>
         </div>
         <div class="box_custom">
-            <select name="Categoria" id="">
+            <select name="Categoria" id="" [(ngModel)]="category" >
                 <option value="">Categoria</option>  
                 <option value="Reunião">Reunião</option>
             </select>
             <div class="container_color">
                 <div class="area_color">
                     <h3>Cor</h3>
-                    <input type="radio" name="color" id="cor1" value="A09BFA"> <label for="color" id=""></label> 
-                    <input type="radio" name="color" id="cor2" value="5382F0"> <label for="color" id=""></label>
-                    <input type="radio" name="color" id="cor3" value="FCD658"> <label for="color" id=""></label>
-                    <input type="radio" name="color" id="cor4" value="FFB778"> <label for="color" id=""></label>
-                    <input type="radio" name="color" id="cor5" value="FF877D"> <label for="color" id=""></label>
-                    <input type="radio" name="color" id="cor6" value="FFFFFF"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="color"  id="cor1" value="A09BFA"> <label for="color" id=""></label> 
+                    <input type="radio" name="color" [(ngModel)]="color" id="cor2" value="5382F0"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="color" id="cor3" value="FCD658"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="color" id="cor4" value="FFB778"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="color" id="cor5" value="FF877D"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="color" id="cor6" value="FFFFFF"> <label for="color" id=""></label>
                 </div>
             </div> 
         </div>
@@ -32,24 +32,24 @@
             <div class="hours_row">
                 <div class="box_input-hour">
                     <h4>Inicio:*</h4>
-                    <input type="date" value="{{date.year}}-{{date.monthNumber}}-{{date.day}}">
+                    <input type="date"  [value]="dateStart" >
                 </div>
                 <div class="box_input-hour">
                     <h4>Termino:*</h4>
-                    <input type="date">
+                    <input type="date" [(ngModel)]="dateFinish" >
                 </div>
             </div>
             <div class="hours_row">
                 <div class="box_input-hour">
                     <h4>Hora de Inicio:*</h4>
-                    <input type="time" [value]="date.hour">
+                    <input type="time"  [value]="hourStart" >
                 </div>
                 <div class="box_input-hour">
                     <h4>Hora de Termino:*</h4>
-                    <input type="time">
+                    <input type="time" [(ngModel)]="hourFinish" >
                 </div>
             </div>
         </div>
-        <button>Salvar</button>
-    </div>
+        <button type="submit">Salvar</button>
+    </form>
 </div>

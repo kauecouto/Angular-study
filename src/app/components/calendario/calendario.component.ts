@@ -77,7 +77,6 @@ export class CalendarioComponent implements OnInit, OnChanges, AfterContentInit 
       this.listDays.push(date.getDate())
       this.listMonths.push(mes)
     } 
-    console.log(this.listMonths)
   }
 
   nextMonth(){

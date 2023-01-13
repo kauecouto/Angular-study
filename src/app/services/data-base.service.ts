@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database'
-import { map } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class DataBaseService {
 
@@ -28,13 +28,16 @@ export class DataBaseService {
   }
 
   getAll(name: string){
-    return this.db.list('name')
+    return this.db.list('contato')
     .snapshotChanges()
     .pipe(
-      map( changes => {
-        return changes.map(c => ({ key: c.payload.key, ...c.payload.val }));
-      })
+        map(changes => {
+              return changes.map(c => ({ key: c.payload.key, ...c.payload.val }));
+          })
     )
+   
+    
+      
   }
 
   delete(name: string, key: string){

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DataBaseService } from 'src/app/services/data-base.service';
 import { Date } from '../../models/date';
 
 @Component({
@@ -16,10 +17,11 @@ export class AgendaComponent implements OnInit {
   }
   @Output() sharedRecord = new EventEmitter()
 
-  constructor() { }
+  constructor(private serviceDataBase: DataBaseService) { }
 
   ngOnInit(): void {
     console.log(this.date)
+    
   }
 
   onOpenRecord(hour: string){
@@ -34,4 +36,6 @@ export class AgendaComponent implements OnInit {
     data.hour = hourNumber
     this.sharedRecord.emit(data)
   }
+
+  
 }
