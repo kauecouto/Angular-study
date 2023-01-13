@@ -1,11 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, OnChanges, AfterContentInit} from '@angular/core';
 
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.component.html',
   styleUrls: ['./calendario.component.css']
 })
-export class CalendarioComponent implements OnInit {
+export class CalendarioComponent implements OnInit, OnChanges, AfterContentInit {
   monthsBR: string[] = ['Janeiro', 'fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'] 
   listDays: number[] = []
   listMonths : number[] = []
@@ -22,16 +22,32 @@ export class CalendarioComponent implements OnInit {
   isAliveLastRow = false
   @Output() sharedDate = new EventEmitter()
 
-  constructor() {}
-
+  constructor() {
+    
+  }
   ngOnInit(): void {
     this.getDaysCalendar(this.currentMonth,this.year)
-    this.sharedDate.emit({
-        day: this.dateFull.getDate(),
-        month: this.monthsBR[this.currentMonth],
-        monthNumber: this.currentMonth +1,
-        year: this.year
+    
+  }
+  
+  ngAfterContentInit(){      
+      this.sharedDate.emit({
+      day: this.dateFull.getDate(),
+      month: this.monthsBR[this.currentMonth],
+      monthNumber: this.currentMonth +1,
+      year: this.year
     })
+    /* console.log('emitiu')
+    console.log({
+      day: this.dateFull.getDate(),
+      month: this.monthsBR[this.currentMonth],
+      monthNumber: this.currentMonth +1,
+      year: this.year
+    }) */
+  }
+
+  ngOnChanges(): void {
+    
   }
 
   onSharedDate(day: number, month: number, year: number){

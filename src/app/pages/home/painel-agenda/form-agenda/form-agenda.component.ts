@@ -7,6 +7,14 @@ import { DateForm } from 'src/app/models/dateForm';
   styleUrls: ['./form-agenda.component.css']
 })
 export class FormAgendaComponent implements OnInit {
+  Title!: string 
+  description!: string
+  category!: string 
+  color!: string
+  dateStart!: string 
+  dateFinish!: string
+  hourStart!: string 
+  hourFinish!: string 
   @Output() isALivePopUpAgenda = new EventEmitter()
   constructor() { }
   @Input() date!: DateForm
@@ -16,5 +24,9 @@ export class FormAgendaComponent implements OnInit {
 
   onEmiterClosePopUp(){
     this.isALivePopUpAgenda.emit()
+  }
+
+  insertRecordDB(){
+
   }
 }

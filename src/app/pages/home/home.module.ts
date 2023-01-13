@@ -11,9 +11,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MenuAsideComponent } from '../../components/menu-aside/menu-aside.component';
 import { PipesModule } from 'src/app/shared/pipes/pipes.module';
 import { MenuNavComponent } from './nav-bar/menu-nav/menu-nav.component';
+
 import { PainelAgendaComponent } from './painel-agenda/painel-agenda.component';
-import { CalendarioComponent } from 'src/app/components/calendario/calendario.component';
 import { AgendaComponent } from 'src/app/components/agenda/agenda.component';
+import { CalendarioComponent } from 'src/app/components/calendario/calendario.component';
 import { FormAgendaComponent } from './painel-agenda/form-agenda/form-agenda.component';
 
 
@@ -26,8 +27,8 @@ import { FormAgendaComponent } from './painel-agenda/form-agenda/form-agenda.com
     PainelAgendaComponent,
     MenuAsideComponent,
     ListSonsComponent,
-    CalendarioComponent,
     AgendaComponent,
+    CalendarioComponent,
     FormAgendaComponent
   ],
   imports: [

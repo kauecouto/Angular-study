@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DateForm } from 'src/app/models/dateForm';
 import { Date } from '../../../models/date';
 
@@ -22,22 +23,15 @@ export class PainelAgendaComponent implements OnInit {
   }
   isALivePopUpAgenda: boolean = false
   
-  constructor() { }
+  constructor( private route: Router) { }
 
   ngOnInit(): void {
+    this.route.navigate(['inicio/agenda'])
   }
 
   emitterDate(evento: Date){
     this.date = evento
-    if(evento.day < 10){
-        this.dateForm = {
-          day: `0${evento.day}`,
-          month: `${evento.month}`,
-          monthNumber: `${evento.monthNumber}`,
-          year: evento.year,
-          hour: evento.hour
-        }
-    }
+    
     if(evento.day < 10 && evento.monthNumber < 10){
       this.dateForm = {
         day: `0${evento.day}`,
@@ -46,8 +40,15 @@ export class PainelAgendaComponent implements OnInit {
         year: evento.year,
         hour: evento.hour
       }
-    }
-    if(evento.monthNumber < 10){
+    }else if(evento.day < 10){
+        this.dateForm = {
+          day: `0${evento.day}`,
+          month: `${evento.month}`,
+          monthNumber: `${evento.monthNumber}`,
+          year: evento.year,
+          hour: evento.hour
+      }
+    }else if(evento.monthNumber < 10){
       this.dateForm = {
         day: `${evento.day}`,
         month: `${evento.month}`,
@@ -73,6 +74,5 @@ export class PainelAgendaComponent implements OnInit {
       this.isALivePopUpAgenda = true
     }
   }
-
 
 }
