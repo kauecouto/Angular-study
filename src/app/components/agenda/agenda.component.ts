@@ -18,13 +18,12 @@ export class AgendaComponent implements OnInit, OnChanges{
     year: new Date().getFullYear()
   }
   url: string = `${this.date.year}-0${this.date.monthNumber}-${this.date.day}`
-  @Output() sharedRecord = new EventEmitter()
   @Output() sharedRecordEdit = new EventEmitter()
   trava: number = 0
 
   constructor(private serviceDataBase: DataBaseService) { }
   ngOnChanges(): void {
-    this.url = `${this.date.year}-0${this.date.monthNumber}-${this.date.day}`
+    this.url = `${this.date?.year}-0${this.date?.monthNumber}-${this.date?.day}`
     this.retrieveRecordAll()
   }
 
@@ -42,7 +41,7 @@ export class AgendaComponent implements OnInit, OnChanges{
   deleteRecord(name: string ,key: string){
     const excluir = confirm('Deseja realmente deletar esse item?')
     if(excluir){
-      this.serviceDataBase.delete( name ,key)
+      this.serviceDataBase.delete(name ,key)
     }
   }
 

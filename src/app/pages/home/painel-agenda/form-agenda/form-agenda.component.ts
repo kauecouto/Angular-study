@@ -11,14 +11,8 @@ import { __values } from 'tslib';
 })
 export class FormAgendaComponent implements OnInit, OnChanges {
   @Input() data!: DateForm
-  title!: string 
-  description: string | undefined = ''
-  category!: string | undefined
-  color!: string
-  dateStart!: string 
-  hourStart!: string 
-  hourFinish!: string 
   @Output() isALivePopUpAgenda = new EventEmitter()
+  
   constructor(private serviceDataBase: DataBaseService) { }
 
   ngOnInit(): void { 
@@ -37,17 +31,21 @@ export class FormAgendaComponent implements OnInit, OnChanges {
 
   insertRecordDB(){
     if(this.data.key){
-      this.serviceDataBase.update(`registros/${this.dateStart}`, this.data.key, {
-        title: this.title,
-        description: this.description,
-        category:  this.category,
-        color: this.color,
-        dateStart: this.dateStart,
-        hourStart:  this.hourStart,
-        hourFinish:  this.hourFinish
+      console.log(this.data.dateStart)
+      console.log('atualizando')
+      this.serviceDataBase.update(`${this.data.dateStart}`, this.data.key, {
+        title: this.data.title,
+        description: this.data.description,
+        category:  this.data.category,
+        color: this.data.color,
+        dateStart: this.data.dateStart,
+        hourStart:  this.data.hourStart,
+        hourFinish:  this.data.hourFinish
       })
     }else{
-      this.serviceDataBase.insert(this.dateStart,{
+      console.log(this.data.dateStart)
+      console.log('criando novo')
+      this.serviceDataBase.insert(`${this.data.dateStart}`,{
         title: this.data.title,
         description: this.data.description,
         category:  this.data.category,

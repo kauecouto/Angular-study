@@ -1,7 +1,7 @@
 <div class="container">
     <app-form-agenda *ngIf="isALivePopUpAgenda" (isALivePopUpAgenda)="controlPopUp()" [data]="dataFormEdit"></app-form-agenda>
     <div class="campo agenda">
-        <app-agenda [date]="date" (sharedRecord)="emitterDate($event)" (sharedRecord)="controlPopUp()" (sharedRecordEdit)="emitterData($event)" (sharedRecordEdit)="controlPopUp()" ></app-agenda>
+        <app-agenda [date]="date" (sharedRecordEdit)="emitterData($event)" (sharedRecordEdit)="controlPopUp()" ></app-agenda>
     </div>
     <div class="campo calendario">
         <app-calendario (sharedDate)="emitterDate($event)"></app-calendario>

@@ -1,23 +1,21 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database'
+import { AngularFireDatabase } from '@angular/fire/compat/database'
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'any'
 })
 export class DataBaseService {
-  registros!: AngularFireList<any>
 
   constructor( private db: AngularFireDatabase) {
   }
 
   insert(name: string, data: any){
-    let key
     this.db.list(name).push(data)
-    .then((result)=> {
-      key = result.key
+    .then((result: any) => {
+      console.log(result.key)
     })
-    return key
+    
   }
 
   update(name: string, key : string, data: any){
