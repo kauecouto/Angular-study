@@ -1,14 +1,19 @@
 <div>
-    <h3>{{ date.day }} de {{date.month}} - {{ date.year }}</h3>
+    <button (click)=" openPopUp()">Adicionar</button>
+    <h3 *ngIf="date">{{ date.day }} de {{date.month}} - {{ date.year }}</h3>
     <div class="container">
-        <div class="hours">
-            <div *ngFor="let hour of hours">
-                <aside >{{ hour }}</aside>
-            </div>
-        </div>
-        <div>
+         <div>
             <ul class="list-hours">
-                <li *ngFor="let hour of hours" (click)="onOpenRecord(hour)"></li>
+                <li *ngFor="let record of records, let i = index"  [ngStyle]="{'background-color':  record.color }">
+                    
+                   <div (click)="openPopUp(record)">
+                    <aside class="category">{{record.category}}</aside>
+                    <h4>{{record.title}}</h4> 
+                    <p>{{record.description}}</p>
+                   <aside class="hour">{{record.hourStart}} até {{record.hourFinish}}</aside>
+                   </div>
+                   <img src="../../../assets/image/delete.png" alt="image-delete"  id="delete_icon" (click)="deleteRecord(record.dateStart ,record.key)">
+                </li>
             </ul>
         </div>
     </div>

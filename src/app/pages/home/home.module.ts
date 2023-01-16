@@ -36,7 +36,7 @@ import { FormAgendaComponent } from './painel-agenda/form-agenda/form-agenda.com
     HomeRoutingModule,
     PipesModule,
     RouterModule,
-    FormsModule,
+    FormsModule
     
   ],
   exports: [HomeComponent,HomeRoutingModule]

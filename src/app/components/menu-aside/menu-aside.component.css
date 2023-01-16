@@ -48,7 +48,7 @@ h3{
     height: 150px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 

@@ -1,25 +1,29 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database'
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database'
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'any'
 })
 export class DataBaseService {
+  registros!: AngularFireList<any>
 
-  constructor( private db: AngularFireDatabase) {}
-
-  insert( name: string, data: any){
-    this.db.list(name).push(data)
-    .then((result)=> {
-      console.log(result.key)
-    })
+  constructor( private db: AngularFireDatabase) {
   }
 
-  update(name: string, data: any , key : string){
+  insert(name: string, data: any){
+    let key
+    this.db.list(name).push(data)
+    .then((result)=> {
+      key = result.key
+    })
+    return key
+  }
+
+  update(name: string, key : string, data: any){
     this.db.list(name).update(key, data)
     .then( result =>{
-      console.log('Alterado!!')
+      console.log('Alterado!!', name)
       console.log(result)
     })
     .catch(err =>{
@@ -28,17 +32,13 @@ export class DataBaseService {
   }
 
   getAll(name: string){
-    return this.db.list('contato')
-    .snapshotChanges()
-    .pipe(
-        map(changes => {
-              return changes.map(c => ({ key: c.payload.key, ...c.payload.val }));
-          })
+    return this.db.list(name).snapshotChanges().pipe(
+      map(changes => changes.map(c =>
+        ({ key: c.payload.key, ...c.payload.toJSON()})
+        ))
     )
-   
-    
-      
   }
+
 
   delete(name: string, key: string){
     this.db.object(`${name}/${key}`).remove()

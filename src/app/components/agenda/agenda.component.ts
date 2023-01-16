@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, OnChanges } from '@angular/core';
+import { DataEditForm } from 'src/app/models/dateEditForm';
 import { DataBaseService } from 'src/app/services/data-base.service';
 import { Date } from '../../models/date';
 
@@ -7,35 +8,45 @@ import { Date } from '../../models/date';
   templateUrl: './agenda.component.html',
   styleUrls: ['./agenda.component.css']
 })
-export class AgendaComponent implements OnInit {
+export class AgendaComponent implements OnInit, OnChanges{
   hours : string[] = ['1h','2h','3h','4h','5h','6h','7h','8h','9h','10h','11h','12h','13h','14h','15h','16h','17h','18h','19h','20h','21h','22h','23h']
+  records!: any[]
   @Input() date: Date = {
-    day: 0,
+    day:  new Date().getDate(),
     month: '',
-    monthNumber: 0,
-    year: 0
+    monthNumber: new Date().getMonth() +1,
+    year: new Date().getFullYear()
   }
+  url: string = `${this.date.year}-0${this.date.monthNumber}-${this.date.day}`
   @Output() sharedRecord = new EventEmitter()
+  @Output() sharedRecordEdit = new EventEmitter()
+  trava: number = 0
 
   constructor(private serviceDataBase: DataBaseService) { }
-
-  ngOnInit(): void {
-    console.log(this.date)
-    
+  ngOnChanges(): void {
+    this.url = `${this.date.year}-0${this.date.monthNumber}-${this.date.day}`
+    this.retrieveRecordAll()
   }
 
-  onOpenRecord(hour: string){
-    let hourNumber
-    if(Number(hour.slice(0, hour.length -1)) < 10){
-      hourNumber = '0' + hour.slice(0, hour.length -1) + ':' + '00'
-    }else{
-      hourNumber = hour.slice(0, hour.length -1) + ':' + '00'
+  ngOnInit(){
+    this.retrieveRecordAll()
+  }
+
+
+  retrieveRecordAll(){
+    this.serviceDataBase.getAll(this.url).subscribe(data => {
+      this.records = data
+    })
+  }
+
+  deleteRecord(name: string ,key: string){
+    const excluir = confirm('Deseja realmente deletar esse item?')
+    if(excluir){
+      this.serviceDataBase.delete( name ,key)
     }
-    
-    const data = this.date
-    data.hour = hourNumber
-    this.sharedRecord.emit(data)
   }
 
-  
+  openPopUp(data?: DataEditForm){
+    this.sharedRecordEdit.emit({...data , ...this.date})
+  }
 }

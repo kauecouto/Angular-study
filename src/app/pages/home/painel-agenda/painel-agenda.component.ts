@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataEditForm } from 'src/app/models/dateEditForm';
 import { DateForm } from 'src/app/models/dateForm';
 import { Date } from '../../../models/date';
 
@@ -9,18 +10,9 @@ import { Date } from '../../../models/date';
   styleUrls: ['./painel-agenda.component.css','./painel-agenda.responsive.component.css']
 })
 export class PainelAgendaComponent implements OnInit {
-  date: Date = {
-    day: 0,
-    month: '',
-    monthNumber: 0,
-    year: 0
-  }
-  dateForm :DateForm = {
-    day: '',
-    month: '',
-    monthNumber: '',
-    year: 0
-  }
+  date!: Date
+  dateForm !:DateForm
+  dataFormEdit!:DataEditForm 
   isALivePopUpAgenda: boolean = false
   
   constructor( private route: Router) { }
@@ -29,7 +21,7 @@ export class PainelAgendaComponent implements OnInit {
     this.route.navigate(['inicio/agenda'])
   }
 
-  emitterDate(evento: Date){
+  emitterDate(evento: any){
     this.date = evento
     
     if(evento.day < 10 && evento.monthNumber < 10){
@@ -57,14 +49,12 @@ export class PainelAgendaComponent implements OnInit {
         hour: evento.hour
       }
     }else{
-      this.dateForm = {
-        day: `${evento.day}`,
-        month: `${evento.month}`,
-        monthNumber: `${evento.monthNumber}`,
-        year: evento.year,
-        hour: evento.hour
-      }
+      this.dateForm = evento
     }
+  }
+
+  emitterData(evento: DataEditForm){
+    this.dataFormEdit = evento
   }
 
   controlPopUp(){

@@ -2,51 +2,47 @@
     <form class="pop_up" (submit)="insertRecordDB()">
         <img src="../../../../../assets/image/x.png" alt="imagem-x" id="button-close" (click)="onEmiterClosePopUp()">
         <div class="box_title">
-            <p>{{date.day}}, {{ date.month}} de {{ date.year }} </p>
+            <p>{{data.day}}, {{ data.month}} de {{ data.year }} </p>
             <div class="area_title">
-                <input type="text" placeholder="Titulo" [(ngModel)]="title" >
+                <input type="text" placeholder="Titulo" name="title" [(ngModel)]="data.title" >
             </div>
         </div>    
         <div class="box_description">
             <h4>Descrição</h4>
-            <textarea name="" id=""  rows="3" placeholder="Adicione uma discrição..." [(ngModel)]="description"></textarea>
+            <textarea name="" id=""  rows="3" placeholder="Adicione uma discrição..." [(ngModel)]="data.description"></textarea>
         </div>
         <div class="box_custom">
-            <select name="Categoria" id="" [(ngModel)]="category" >
+            <select name="Categoria" id="" [(ngModel)]="data.category" >
                 <option value="">Categoria</option>  
                 <option value="Reunião">Reunião</option>
             </select>
             <div class="container_color">
                 <div class="area_color">
                     <h3>Cor</h3>
-                    <input type="radio" name="color" [(ngModel)]="color"  id="cor1" value="A09BFA"> <label for="color" id=""></label> 
-                    <input type="radio" name="color" [(ngModel)]="color" id="cor2" value="5382F0"> <label for="color" id=""></label>
-                    <input type="radio" name="color" [(ngModel)]="color" id="cor3" value="FCD658"> <label for="color" id=""></label>
-                    <input type="radio" name="color" [(ngModel)]="color" id="cor4" value="FFB778"> <label for="color" id=""></label>
-                    <input type="radio" name="color" [(ngModel)]="color" id="cor5" value="FF877D"> <label for="color" id=""></label>
-                    <input type="radio" name="color" [(ngModel)]="color" id="cor6" value="FFFFFF"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="data.color"  id="cor1" value="#A09BFA"> <label for="color" id=""></label> 
+                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor2" value="#A1BEFF"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor3" value="#FCD658"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor4" value="#FFB778"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor5" value="#FF877D"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor6" value="#FFFFFF"> <label for="color" id=""></label>
                 </div>
             </div> 
         </div>
         <div class="box_hours">
             <div class="hours_row">
                 <div class="box_input-hour">
-                    <h4>Inicio:*</h4>
-                    <input type="date"  [value]="dateStart" >
-                </div>
-                <div class="box_input-hour">
-                    <h4>Termino:*</h4>
-                    <input type="date" [(ngModel)]="dateFinish" >
+                    <h4>Data:*</h4>
+                    <input type="date"  [(ngModel)]="data.dateStart" >
                 </div>
             </div>
             <div class="hours_row">
                 <div class="box_input-hour">
                     <h4>Hora de Inicio:*</h4>
-                    <input type="time"  [value]="hourStart" >
+                    <input type="time" name="hourStart" [(ngModel)]="data.hourStart">
                 </div>
                 <div class="box_input-hour">
                     <h4>Hora de Termino:*</h4>
-                    <input type="time" [(ngModel)]="hourFinish" >
+                    <input type="time" name="hourFinish" [(ngModel)]="data.hourFinish">
                 </div>
             </div>
         </div>

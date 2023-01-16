@@ -1,4 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { environment } from '../../../environments/environment'
+
+import { DataBaseService } from 'src/app/services/data-base.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,17 +10,34 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./menu-aside.component.css','./menu-aside.responsive.component.css']
 })
 export class MenuAsideComponent implements OnInit {
-  nameUser: string | null = ''
+  nameUser: any = ''
+  obj: any = {
+    key: '',
+    userName: ''
+  }
   @Output() menu = new EventEmitter()
 
-  constructor() { }
+  constructor(private serviceDataBase: DataBaseService,
+    private authService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.nameUser = localStorage.getItem('userName')
+    
+    this.getUserName()
+    
   }
 
   onMenu(){
     this.menu.emit()
   }
+
+  getUserName(){
+    this.serviceDataBase.getAll('userName').subscribe( data => {
+      this.obj = data[0]
+      environment.userKey =  this.obj.key
+    }) 
+    
+    
+  }
+
 
 }

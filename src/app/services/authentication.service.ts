@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { Router } from '@angular/router';
 import { Usuario } from '../models/usuarios';
+import { DataBaseService } from './data-base.service';
+import { environment } from '../../environments/environment'
 
 
 @Injectable({
@@ -12,7 +14,8 @@ export class AuthenticationService {
   isLoggedIn: string | null = JSON.stringify(localStorage.getItem('isLoggedIn')?.slice(1, -1))
 
   constructor(private firebaseAuth: AngularFireAuth,
-    private router: Router
+    private router: Router,
+    private serviceDataBase: DataBaseService
   ) { }
 
   async signIn(email: string, password: string){
@@ -32,10 +35,12 @@ export class AuthenticationService {
   }
 
   async signUp(email: string, password: string, name: string){
+    this.serviceDataBase.update('userName', environment.userKey ,{userName: name})
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
     .then(res => {
       localStorage.setItem('isLoggedIn', 'true')
       this.user = {
+        key: '',
         name: name,
         email: email,
         password: password
@@ -48,9 +53,6 @@ export class AuthenticationService {
 
   Loggout(){
     this.firebaseAuth.signOut()
-    localStorage.removeItem('user')
-    localStorage.removeItem('userName')
-    localStorage.removeItem('isLoggedIn')
     this.router.navigate(['/login'])
   }
 
