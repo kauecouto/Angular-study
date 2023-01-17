@@ -46,7 +46,6 @@ export class AuthenticationService {
         password: password
       }
       localStorage.setItem('user', JSON.stringify(res.user))
-      localStorage.setItem('userName', JSON.stringify(this.user.name))
       this.router.navigate(['/inicio/estudar'])
       this.serviceDataBase.update('userName', environment.userKey ,{userName: name})
     })
@@ -54,7 +53,7 @@ export class AuthenticationService {
 
   Loggout(){
     this.firebaseAuth.signOut()
-    localStorage.removeItem('userName')
+    localStorage.removeItem('isLoggedIn')
     this.router.navigate(['/login'])
   }
 
