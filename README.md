@@ -38,5 +38,5 @@
 </pre>
 # 📑 Como Posso Rodar a Aplicacao?
 
-- [Acessar a Aplicação](https://study-io.netlify.app)
+- [Acessar a Aplicação](https://angular-study-io.vercel.app)
 -----------------------------------------------------------------------------
