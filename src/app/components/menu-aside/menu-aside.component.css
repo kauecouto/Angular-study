@@ -45,7 +45,6 @@ h3{
 .container-buttons{
     margin-top: 20px;
     width: 90%;
-    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

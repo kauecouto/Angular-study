@@ -58,6 +58,7 @@ button{
 }
 
 #delete_icon{
+    display: inline;
     position: absolute;
     bottom: 10px;
 }

@@ -1,30 +1,34 @@
 <div class="container">
-    <form class="pop_up" (submit)="insertRecordDB()">
+    <form class="pop_up" [ngClass]="{'invalid': invalid}" name="formulario" (submit)="insertRecordDB()">
         <img src="../../../../../assets/image/x.png" alt="imagem-x" id="button-close" (click)="onEmiterClosePopUp()">
         <div class="box_title">
             <p>{{data.day}}, {{ data.month}} de {{ data.year }} </p>
             <div class="area_title">
-                <input type="text" placeholder="Titulo" name="title" [(ngModel)]="data.title" >
+                <input type="text" placeholder="Titulo" name="title" [(ngModel)]="data.title" [ngClass]="{'invalid': invalid}">
             </div>
         </div>    
         <div class="box_description">
             <h4>Descrição</h4>
-            <textarea name="" id=""  rows="3" placeholder="Adicione uma discrição..." [(ngModel)]="data.description"></textarea>
+            <textarea name="" id=""  rows="3" placeholder="Adicione uma discrição..." [(ngModel)]="data.description" [ngClass]="{'invalid': invalid}"></textarea>
         </div>
         <div class="box_custom">
-            <select name="Categoria" id="" [(ngModel)]="data.category" >
+            <select name="Categoria" id="" [(ngModel)]="data.category" [ngClass]="{'invalid': invalid}">
                 <option value="">Categoria</option>  
                 <option value="Reunião">Reunião</option>
+                <option value="Lazer">Lazer</option>
+                <option value="Estudo">Estudo</option>
+                <option value="Tarefa">Tarefa</option>
+                <option value="Trabalho">Trabalho</option>
             </select>
             <div class="container_color">
                 <div class="area_color">
                     <h3>Cor</h3>
-                    <input type="radio" name="color" [(ngModel)]="data.color"  id="cor1" value="#A09BFA"> <label for="color" id=""></label> 
-                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor2" value="#A1BEFF"> <label for="color" id=""></label>
-                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor3" value="#FCD658"> <label for="color" id=""></label>
-                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor4" value="#FFB778"> <label for="color" id=""></label>
-                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor5" value="#FF877D"> <label for="color" id=""></label>
-                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor6" value="#FFFFFF"> <label for="color" id=""></label>
+                    <input type="radio" name="color" [(ngModel)]="data.color"  id="cor1" value="#A09BFA" [ngClass]="{'invalid': invalid}"> 
+                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor2" value="#A1BEFF" [ngClass]="{'invalid': invalid}"> 
+                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor3" value="#FCD658" [ngClass]="{'invalid': invalid}"> 
+                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor4" value="#FFB778" [ngClass]="{'invalid': invalid}"> 
+                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor5" value="#FF877D" [ngClass]="{'invalid': invalid}"> 
+                    <input type="radio" name="color" [(ngModel)]="data.color" id="cor6" value="#FFFFFF" [ngClass]="{'invalid': invalid}"> 
                 </div>
             </div> 
         </div>
@@ -32,20 +36,21 @@
             <div class="hours_row">
                 <div class="box_input-hour">
                     <h4>Data:*</h4>
-                    <input type="date"  [(ngModel)]="data.dateStart" >
+                    <input type="date"  [(ngModel)]="data.dateStart" [ngClass]="{'invalid': invalid}">
                 </div>
             </div>
             <div class="hours_row">
                 <div class="box_input-hour">
                     <h4>Hora de Inicio:*</h4>
-                    <input type="time" name="hourStart" [(ngModel)]="data.hourStart">
+                    <input type="time" name="hourStart" [(ngModel)]="data.hourStart" [ngClass]="{'invalid': invalid}">
                 </div>
                 <div class="box_input-hour">
                     <h4>Hora de Termino:*</h4>
-                    <input type="time" name="hourFinish" [(ngModel)]="data.hourFinish">
+                    <input type="time" name="hourFinish" [(ngModel)]="data.hourFinish" [ngClass]="{'invalid': invalid}">
                 </div>
             </div>
         </div>
+        <p class="alert_invalid" *ngIf="invalid">Preecha todos os campos!</p>
         <button type="submit">Salvar</button>
     </form>
 </div>

@@ -12,7 +12,7 @@ import { __values } from 'tslib';
 export class FormAgendaComponent implements OnInit, OnChanges {
   @Input() data!: DateForm
   @Output() isALivePopUpAgenda = new EventEmitter()
-  
+  invalid: boolean = false
   constructor(private serviceDataBase: DataBaseService) { }
 
   ngOnInit(): void { 
@@ -30,30 +30,37 @@ export class FormAgendaComponent implements OnInit, OnChanges {
   }
 
   insertRecordDB(){
-    if(this.data.key){
-      console.log(this.data.dateStart)
-      console.log('atualizando')
-      this.serviceDataBase.update(`${this.data.dateStart}`, this.data.key, {
-        title: this.data.title,
-        description: this.data.description,
-        category:  this.data.category,
-        color: this.data.color,
-        dateStart: this.data.dateStart,
-        hourStart:  this.data.hourStart,
-        hourFinish:  this.data.hourFinish
-      })
+    console.log(this.data)
+    console.log(Object.values(this.data).length)
+    if(Object.values(this.data).length >= 11){
+      this.invalid = false        
+      if(this.data.key){
+            this.serviceDataBase.update(`${this.data.dateStart}`, this.data.key, {
+              title: this.data.title,
+              description: this.data.description,
+              category:  this.data.category,
+              color: this.data.color,
+              dateStart: this.data.dateStart,
+              hourStart:  this.data.hourStart,
+              hourFinish:  this.data.hourFinish})
+            this.onEmiterClosePopUp()
+        }else{
+            this.serviceDataBase.insert(`${this.data.dateStart}`,{
+              title: this.data.title,
+              description: this.data.description,
+              category:  this.data.category,
+              color: this.data.color,
+              dateStart: this.data.dateStart,
+              hourStart:  this.data.hourStart,
+              hourFinish:  this.data.hourFinish})
+          this.onEmiterClosePopUp()
+            }
     }else{
-      console.log(this.data.dateStart)
-      console.log('criando novo')
-      this.serviceDataBase.insert(`${this.data.dateStart}`,{
-        title: this.data.title,
-        description: this.data.description,
-        category:  this.data.category,
-        color: this.data.color,
-        dateStart: this.data.dateStart,
-        hourStart:  this.data.hourStart,
-        hourFinish:  this.data.hourFinish
-    })
+      this.invalid = true
     }
+    
+
+    console.log()
+    
   }
 }

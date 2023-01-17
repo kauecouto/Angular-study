@@ -1,5 +1,6 @@
 .view-home{
     background-color: #EEEEEE;
+    height: 120vh;
 }
 
 header{
@@ -86,7 +87,7 @@ app-menu{
         justify-content: center;
         align-items: center;
         width: 100%;
-        padding: 0;
+        padding: 1;
     }
 
     .container_painel{

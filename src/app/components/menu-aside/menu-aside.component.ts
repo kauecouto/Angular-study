@@ -21,9 +21,7 @@ export class MenuAsideComponent implements OnInit {
     private authService: AuthenticationService) { }
 
   ngOnInit(): void {
-    
     this.getUserName()
-    
   }
 
   onMenu(){
@@ -31,12 +29,14 @@ export class MenuAsideComponent implements OnInit {
   }
 
   getUserName(){
-    this.serviceDataBase.getAll('userName').subscribe( data => {
-      this.obj = data[0]
+    this.serviceDataBase.getAll('userName').subscribe( {
+      next: result => {
+      this.obj = result[0]
       environment.userKey =  this.obj.key
-    }) 
-    
-    
+      localStorage.setItem('userName', JSON.stringify(this.obj.name))},
+      error: err => console.error(err)
+    }
+    ) 
   }
 
 

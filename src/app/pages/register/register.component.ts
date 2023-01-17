@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSignUp(email: string, password: string, name: string){
+    
     this.serviceAuthetication.signUp(email, password, name)
     
   }

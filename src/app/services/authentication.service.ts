@@ -35,7 +35,7 @@ export class AuthenticationService {
   }
 
   async signUp(email: string, password: string, name: string){
-    this.serviceDataBase.update('userName', environment.userKey ,{userName: name})
+    /*  */
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
     .then(res => {
       localStorage.setItem('isLoggedIn', 'true')
@@ -48,11 +48,13 @@ export class AuthenticationService {
       localStorage.setItem('user', JSON.stringify(res.user))
       localStorage.setItem('userName', JSON.stringify(this.user.name))
       this.router.navigate(['/inicio/estudar'])
+      this.serviceDataBase.update('userName', environment.userKey ,{userName: name})
     })
   }
 
   Loggout(){
     this.firebaseAuth.signOut()
+    localStorage.removeItem('userName')
     this.router.navigate(['/login'])
   }
 
