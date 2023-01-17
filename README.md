@@ -33,8 +33,7 @@
 - [x] Login/Register com uso de formulário e validação
 - [x] Pomodoro
 - [x] Design Responsivo
-- [ ] Agenda
-- [ ] Tarefas
+- [x] Agenda
 </pre>
 # 📑 Como Posso Rodar a Aplicacao?
 
