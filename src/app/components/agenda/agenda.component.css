@@ -37,6 +37,7 @@ button{
     flex-direction: column;
     margin-top: 3px;
     grid-area: 'list-hours';
+    
 }
 
 .list-hours li{
@@ -45,6 +46,7 @@ button{
     width: 100%;
     padding: 10px;
     border: 0.2px solid rgba(128, 128, 128, 0.605);
+    border-radius: 5px;
 }
 
 .list-hours li:hover {
@@ -62,6 +64,8 @@ button{
     position: absolute;
     bottom: 10px;
 }
+
+
 
 @media (max-width: 500px){
     .list-hours li{

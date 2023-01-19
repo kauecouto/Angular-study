@@ -2,9 +2,10 @@
     <button (click)=" openPopUp()">Adicionar</button>
     <h3 *ngIf="date">{{ date.day }} de {{date.month}} - {{ date.year }}</h3>
     <div class="container">
-         <div>
-            <ul class="list-hours">
-                <li *ngFor="let record of records, let i = index"  [ngStyle]="{'background-color':  record.color }">
+         
+            <ul class="list-hours" *ngIf="records.length > 0;else  MensageEmpty">
+                <li 
+                 *ngFor="let record of records, let i = index"  [ngStyle]="{'background-color':  record.color }">
                     
                    <div (click)="openPopUp(record)">
                     <aside class="category">{{record.category}}</aside>
@@ -14,7 +15,11 @@
                    </div>
                    <img src="../../../assets/image/delete.png" alt="image-delete"  id="delete_icon" (click)="deleteRecord(record.dateStart ,record.key)">
                 </li>
+                
             </ul>
-        </div>
+            <ng-template  #MensageEmpty>
+                    <app-no-data></app-no-data>
+            </ng-template>
+        
     </div>
 </div>

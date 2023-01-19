@@ -17,6 +17,7 @@ import { AgendaComponent } from 'src/app/components/agenda/agenda.component';
 import { CalendarioComponent } from 'src/app/components/calendario/calendario.component';
 import { FormAgendaComponent } from './painel-agenda/form-agenda/form-agenda.component';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { NoDataComponent } from 'src/app/components/no-data/no-data.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
     ListSonsComponent,
     AgendaComponent,
     CalendarioComponent,
-    FormAgendaComponent
+    FormAgendaComponent,
+    NoDataComponent
   ],
   imports: [
     CommonModule,

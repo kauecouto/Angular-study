@@ -15,12 +15,14 @@ import { DataBaseService } from './services/data-base.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     InputComponent,
-    RegisterComponent,
+    RegisterComponent
+    
   ],
   imports: [
     BrowserModule,

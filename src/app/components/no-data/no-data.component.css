@@ -1,0 +1,14 @@
+.box_mensage{
+    background-color: rgba(231, 231, 231, 0.518);
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+img{
+    width: 35px;
+}

@@ -38,6 +38,7 @@ export class AgendaComponent implements OnInit, OnChanges{
     
     this.serviceDataBase.getAll(`usuários/${localStorage.getItem('key')}/Registros_Agenda/${this.url}`).subscribe(data => {
       this.records = data
+      console.log(data)
     })
   }
 
@@ -77,7 +78,7 @@ export class AgendaComponent implements OnInit, OnChanges{
       this.dateUrl = this.date
     }
   }
-  
+
   openPopUp(data?: DataForm){
     this.checkDate()
     this.sharedRecordEdit.emit({...data , ...this.dateUrl})

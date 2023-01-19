@@ -1,15 +1,16 @@
 
 
 @media (max-width: 830px){
+    
     .container-menu{
-        background-color: white;
+        background-color: rgba(0, 0, 0, 0.888);
         width: 100vw;
-        height: 100%;
+        height: 90vh;
         box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.381);
         margin-right: 0;
         top: -119px;
         z-index: 9999;
-        
+        color: rgb(229, 229, 229);
     }
 
     .img-perfil{
@@ -25,6 +26,7 @@
         width: 100%;
         flex-direction: row;
         justify-content: flex-start;
+        margin-bottom: 1rem;
     }
 
     .img-perfil{
@@ -36,6 +38,40 @@
         padding-left: 0.8rem;
     }
 
+    .container-buttons{
+        margin-top: 20px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: white;
+    }
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #4b4b4b;
+        color: white;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    button img{
+        align-self: start;
+        filter: brightness(2.5);
+    }
+
+    .active{
+        color: #4c7070;
+        background-color: #d4f4f4;
+        font-weight: 700;
+    }   
+
+    .active  img{
+        filter: brightness(1);
+    }   
+
     #exit{
         display: block;
         position: absolute;
@@ -43,5 +79,6 @@
         align-self: flex-start;
         width: 20px;
         height: 20px;
+        filter: brightness(3);
     }
 }
