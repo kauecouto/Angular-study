@@ -4,13 +4,19 @@ import { Router } from '@angular/router';
 import { Usuario } from '../models/usuarios';
 import { DataBaseService } from './data-base.service';
 import { environment } from '../../environments/environment'
+import { VirtualTimeScheduler } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  user!: Usuario
+  user: Usuario = {
+    key : '',
+    name : '',
+    email: '',
+    password: ''
+  }
   isLoggedIn: string | null = JSON.stringify(localStorage.getItem('isLoggedIn')?.slice(1, -1))
 
   constructor(private firebaseAuth: AngularFireAuth,
@@ -25,17 +31,20 @@ export class AuthenticationService {
       localStorage.setItem('isLoggedIn', 'true')
       localStorage.setItem('user', JSON.stringify(res.user))
       this.router.navigate(['/inicio/estudar'])
+      this.user.key = email.replace(/,/g, "").replace(/\./g, "").replace(/\@/g, "")
+      localStorage.setItem('key' ,this.user.key)
       success = true
+
     })
     .catch(err => {
       console.error(err)
       success = false
-    })
+    }) 
     return success
+   
   }
 
   async signUp(email: string, password: string, name: string){
-    /*  */
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
     .then(res => {
       localStorage.setItem('isLoggedIn', 'true')
@@ -47,7 +56,12 @@ export class AuthenticationService {
       }
       localStorage.setItem('user', JSON.stringify(res.user))
       this.router.navigate(['/inicio/estudar'])
-      this.serviceDataBase.update('userName', environment.userKey ,{userName: name})
+      this.user.key = email.replace(/,/g, "").replace(/\./g, "").replace(/\@/g, "")
+      localStorage.setItem('key' ,this.user.key)
+      localStorage.setItem('userName', name)
+      this.serviceDataBase.insert(`usuários/${this.user.key}`,{
+        name: name
+      })
     })
   }
 

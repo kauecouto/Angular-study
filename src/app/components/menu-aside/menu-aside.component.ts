@@ -29,10 +29,9 @@ export class MenuAsideComponent implements OnInit {
   }
 
   getUserName(){
-    this.serviceDataBase.getAll('userName').subscribe( {
+    this.serviceDataBase.getAll(`usuários/${localStorage.getItem('key')}`).subscribe( {
       next: result => {
       this.obj = result[0]
-      environment.userKey =  this.obj.key
       localStorage.setItem('userName', JSON.stringify(this.obj.name))},
       error: err => console.error(err)
     }

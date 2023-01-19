@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataEditForm } from 'src/app/models/dateEditForm';
-import { DateForm } from 'src/app/models/dateForm';
+import { DataForm } from 'src/app/models/dataForm';
 import { Date } from '../../../models/date';
 
 @Component({
@@ -11,8 +10,8 @@ import { Date } from '../../../models/date';
 })
 export class PainelAgendaComponent implements OnInit {
   date!: Date
-  dateForm !:DateForm
-  dataFormEdit!:DataEditForm 
+  dateForm !:DataForm
+  dataFormEdit!:DataForm 
   isALivePopUpAgenda: boolean = false
   
   constructor( private route: Router) { }
@@ -53,7 +52,7 @@ export class PainelAgendaComponent implements OnInit {
     }
   }
 
-  emitterData(evento: DataEditForm){
+  emitterData(evento: DataForm){
     this.dataFormEdit = evento
   }
 

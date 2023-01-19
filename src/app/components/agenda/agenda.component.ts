@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, OnChanges } from '@angular/core';
-import { DataEditForm } from 'src/app/models/dateEditForm';
+import { DataForm } from 'src/app/models/dataForm';
 import { DataBaseService } from 'src/app/services/data-base.service';
 import { Date } from '../../models/date';
 
@@ -17,13 +17,15 @@ export class AgendaComponent implements OnInit, OnChanges{
     monthNumber: new Date().getMonth() +1,
     year: new Date().getFullYear()
   }
+  dateUrl!: Date
   url: string = `${this.date.year}-0${this.date.monthNumber}-${this.date.day}`
   @Output() sharedRecordEdit = new EventEmitter()
   trava: number = 0
 
   constructor(private serviceDataBase: DataBaseService) { }
   ngOnChanges(): void {
-    this.url = `${this.date?.year}-0${this.date?.monthNumber}-${this.date?.day}`
+    this.checkDate()
+    this.url = `${this.dateUrl.year}-${this.dateUrl.monthNumber}-${this.dateUrl.day}`
     this.retrieveRecordAll()
   }
 
@@ -33,7 +35,8 @@ export class AgendaComponent implements OnInit, OnChanges{
 
 
   retrieveRecordAll(){
-    this.serviceDataBase.getAll(this.url).subscribe(data => {
+    
+    this.serviceDataBase.getAll(`usuários/${localStorage.getItem('key')}/Registros_Agenda/${this.url}`).subscribe(data => {
       this.records = data
     })
   }
@@ -41,11 +44,42 @@ export class AgendaComponent implements OnInit, OnChanges{
   deleteRecord(name: string ,key: string){
     const excluir = confirm('Deseja realmente deletar esse item?')
     if(excluir){
-      this.serviceDataBase.delete(name ,key)
+      this.serviceDataBase.delete(`usuários/${localStorage.getItem('key')}/Registros_Agenda/${name}`,key)
     }
   }
 
-  openPopUp(data?: DataEditForm){
-    this.sharedRecordEdit.emit({...data , ...this.date})
+  checkDate(){
+    if(this.date.day < 10 && this.date.monthNumber < 10){
+      this.dateUrl = {
+        day: `0${this.date.day}`,
+        month: `${this.date.month}`,
+        monthNumber: `0${this.date.monthNumber}`,
+        year: this.date.year,
+        hour: this.date.hour
+      }
+    }else if(this.date.day < 10){
+        this.dateUrl = {
+          day: `0${this.date.day}`,
+          month: `${this.date.month}`,
+          monthNumber: `${this.date.monthNumber}`,
+          year: this.date.year,
+          hour: this.date.hour
+      }
+    }else if(this.date.monthNumber < 10){
+      this.dateUrl = {
+        day: `${this.date.day}`,
+        month: `${this.date.month}`,
+        monthNumber: `0${this.date.monthNumber}`,
+        year: this.date.year,
+        hour: this.date.hour
+      }
+    }else{
+      this.dateUrl = this.date
+    }
+  }
+  
+  openPopUp(data?: DataForm){
+    this.checkDate()
+    this.sharedRecordEdit.emit({...data , ...this.dateUrl})
   }
 }

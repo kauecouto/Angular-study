@@ -1,4 +1,4 @@
-export interface DateForm {
+export interface DataForm {
     day?: string,
     month?: string,
     monthNumber?: string,

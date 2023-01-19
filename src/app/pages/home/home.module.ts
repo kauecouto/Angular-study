@@ -16,6 +16,7 @@ import { PainelAgendaComponent } from './painel-agenda/painel-agenda.component';
 import { AgendaComponent } from 'src/app/components/agenda/agenda.component';
 import { CalendarioComponent } from 'src/app/components/calendario/calendario.component';
 import { FormAgendaComponent } from './painel-agenda/form-agenda/form-agenda.component';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 @NgModule({
@@ -37,7 +38,6 @@ import { FormAgendaComponent } from './painel-agenda/form-agenda/form-agenda.com
     PipesModule,
     RouterModule,
     FormsModule
-    
   ],
   exports: [HomeComponent,HomeRoutingModule]
 })

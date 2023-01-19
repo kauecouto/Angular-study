@@ -65,6 +65,6 @@ button{
 
 @media (max-width: 500px){
     .list-hours li{
-        padding: 17px 0;
+        padding: 13px 10px;
     }
 }
