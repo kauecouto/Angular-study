@@ -42,7 +42,7 @@
     }
 
     .container-buttons{
-        margin-top: 20px;
+        margin-top: 10px;
         width: 90%;
         display: flex;
         flex-direction: column;
@@ -84,5 +84,10 @@
         width: 20px;
         height: 20px;
         filter: brightness(3);
+    }
+
+    .constainer_illustration p{
+        color: white;
+        font-size: 14px;
     }
 }

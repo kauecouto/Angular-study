@@ -18,15 +18,15 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
   isStudy!: boolean
 
   somStorage = localStorage.getItem('music-pomo')?.slice(1, -1)
-  som: any = localStorage.getItem('music-pomo')? new Audio(this.somStorage)  : new Audio('../../../assets/audio/lo-fi.mp3')
+  som: any =  new Audio('../../../assets/audio/lo-fi.mp3')
   alarme : any = new Audio('../../../assets/audio/som-alarme.mp3')
   volume: number = 1
   constructor() { }
 
   ngOnInit(): void {
+    this.som = new Audio(this.somStorage)
     this.volume = Number(localStorage.getItem('volumeMusic'))
     this.som.volume = this.volume
-  
   }
 
   changeMusic(evento: string){
@@ -53,6 +53,7 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
     }else{
       this.seconds -= 1
     }
+
     if(this.minutes < 0){
       this.alarme.play()
       this.btnIniciarActive = true
@@ -67,11 +68,11 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
         this.iniciar()
         alert('tempo acabou!')
       }
+
     }
   }
 
   iniciar(){
-
     if(this.paused == false){
       this.minutes -= 1
       this.seconds = 59

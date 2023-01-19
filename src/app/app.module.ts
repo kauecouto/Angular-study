@@ -12,6 +12,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AuthenticationService } from './services/authentication.service';
 import { HomeModule } from './pages/home/home.module';
 import { DataBaseService } from './services/data-base.service';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 
@@ -21,7 +22,8 @@ import { DataBaseService } from './services/data-base.service';
     AppComponent,
     LoginComponent,
     InputComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
     
   ],
   imports: [

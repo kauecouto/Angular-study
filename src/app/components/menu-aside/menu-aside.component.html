@@ -9,5 +9,13 @@
             <button [routerLink]="'estudar'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <img src="../../../assets/image/chapeu.png" alt="icone">Estudar</button>
             <button [routerLink]="'agenda'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <img src="../../../assets/image/calendar.png" alt="icone">Agenda</button>
         </div>
+        <div *ngIf="routeActive === 'estudar'" class="constainer_illustration">
+            <p>Foco nos Estudos!</p>
+            <img src="../../../assets/image/ilustrator-estudo.svg" alt="ilustrator" id="illustration">
+        </div>
+        <div class="constainer_illustration" *ngIf="routeActive === 'agenda'" >
+            <p>Rotina Organizada</p>
+            <img src="../../../assets/image/ilustrator-agenda.svg" alt="ilustrator" id="illustration">
+        </div>
     </div>
 
