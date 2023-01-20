@@ -25,16 +25,12 @@ export class MenuAsideComponent implements OnInit, AfterContentChecked {
     private activeRoute : ActivatedRoute) { }
 
   ngAfterContentChecked(): void {
-    this.activeRoute.snapshot.children.map(element => this.routeActive = element.url.join('')) 
-    console.log(this.routeActive)
+    this.activeRoute.snapshot.children.map(element => this.routeActive = element.url.join(''))
   }
 
   ngOnInit(): void {
     this.getUserName()
-    this.activeRoute.snapshot.children.map(element => this.routeActive = element.url.join('')) 
   }
-
-  
 
   onMenu(){
     this.menu.emit()

@@ -6,7 +6,6 @@
             <ul class="list-hours" *ngIf="records.length > 0;else  MensageEmpty">
                 <li 
                  *ngFor="let record of records, let i = index"  [ngStyle]="{'background-color':  record.color }">
-                    
                    <div (click)="openPopUp(record)">
                     <aside class="category">{{record.category}}</aside>
                     <h4>{{record.title}}</h4> 
@@ -15,7 +14,6 @@
                    </div>
                    <img src="../../../assets/image/delete.png" alt="image-delete"  id="delete_icon" (click)="deleteRecord(record.dateStart ,record.key)">
                 </li>
-                
             </ul>
             <ng-template  #MensageEmpty>
                     <app-no-data></app-no-data>

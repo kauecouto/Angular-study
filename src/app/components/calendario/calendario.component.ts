@@ -20,6 +20,7 @@ export class CalendarioComponent implements OnInit, OnChanges {
   currentYear: number = this.year
   monthElement: string = ''
   isAliveLastRow = false
+  dateActiveList: boolean[] = []
   @Output() sharedDate = new EventEmitter()
 
   constructor() {
@@ -37,12 +38,17 @@ export class CalendarioComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    this.sharedDate.emit({
-      day: this.dateFull.getDate(),
-      month: this.monthsBR[this.currentMonth],
-      monthNumber: this.currentMonth +1,
-      year: this.year
-    })
+    
+    
+  }
+
+  buttonSelected(index: number | undefined){
+    for(let i = 0; i < 38; i++){
+      this.dateActiveList[i] = false
+    }
+    if(typeof(index) == 'number'){
+      this.dateActiveList[index] = true
+    }
   }
 
   onSharedDate(day: number, month: number, year: number){
@@ -72,6 +78,7 @@ export class CalendarioComponent implements OnInit, OnChanges {
       this.listDays.push(date.getDate())
       this.listMonths.push(mes)
     } 
+    this.buttonSelected(undefined)
   }
 
   nextMonth(){

@@ -51,7 +51,7 @@ aside{
     transition: 0.3s;
 }
 
-tbody aside:hover{
+tbody aside:hover,  .active{
     background-color: #D9EBEB;
 }
 

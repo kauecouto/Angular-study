@@ -19,6 +19,8 @@
         <tbody>
             <aside *ngFor="let day of listDays; let i = index" 
             (click)="onSharedDate(day,month,year)"
+            (click)="buttonSelected(i)"
+            [class.active]="dateActiveList[i]"
             [class.dia-atual]="day == currentDay && month == currentMonth && year == currentYear &&  i <= getlastDayThisMonth"
             [class.mes-anterior]="(i - firstDayIndex) < 0"
             [class.mes-posterior]="i - firstDayIndex  > getlastDayThisMonth -1 "
