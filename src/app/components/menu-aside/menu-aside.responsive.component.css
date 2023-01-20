@@ -6,7 +6,7 @@
         position: fixed;
         background-color: rgba(0, 0, 0, 0.888);
         width: 100vw;
-        height: 100vh;
+        height: 92vh;
         box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.381);
         margin-right: 0;
         top: 60px;
@@ -85,6 +85,10 @@
         width: 20px;
         height: 20px;
         filter: brightness(3);
+    }
+
+    .constainer_illustration{
+        margin: 20px;
     }
 
     .constainer_illustration p{

@@ -6,8 +6,12 @@
             <h3>{{ obj.name }}</h3>
         </div>
         <div class="container-buttons">
-            <button [routerLink]="'estudar'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <img src="../../../assets/image/chapeu.png" alt="icone">Estudar</button>
-            <button [routerLink]="'agenda'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <img src="../../../assets/image/calendar.png" alt="icone">Agenda</button>
+            <button [routerLink]="'estudar'" routerLinkActive="active"
+            (click)="onChangePage()"
+             [routerLinkActiveOptions]="{exact:true}"> <img src="../../../assets/image/chapeu.png" alt="icone">Estudar</button>
+            <button [routerLink]="'agenda'" routerLinkActive="active"
+            (click)="onChangePage()"
+             [routerLinkActiveOptions]="{exact:true}"> <img src="../../../assets/image/calendar.png" alt="icone">Agenda</button>
         </div>
         <div *ngIf="routeActive === 'estudar'" class="constainer_illustration">
             <p>Foco nos Estudos!</p>

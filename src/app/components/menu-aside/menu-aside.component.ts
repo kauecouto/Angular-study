@@ -1,10 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, OnChanges, DoCheck, AfterContentInit, AfterContentChecked } from '@angular/core';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { environment } from '../../../environments/environment'
-
 import { DataBaseService } from 'src/app/services/data-base.service';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -19,9 +15,8 @@ export class MenuAsideComponent implements OnInit, AfterContentChecked {
   }
   routeActive!: string
   @Output() menu = new EventEmitter()
-
+  @Output() changePage = new EventEmitter()
   constructor(private serviceDataBase: DataBaseService,
-    private authService: AuthenticationService,
     private activeRoute : ActivatedRoute) { }
 
   ngAfterContentChecked(): void {
@@ -46,5 +41,8 @@ export class MenuAsideComponent implements OnInit, AfterContentChecked {
     ) 
   }
 
+  onChangePage(){
+    this.changePage.emit()
+  }
 
 }

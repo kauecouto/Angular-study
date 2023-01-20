@@ -4,13 +4,13 @@
         <div class="container-menu">
             <div class="box-menu">
                 <img src="../../../assets/image/menu-hamburguer.png" alt="imagem-menu" id="menu" (click)="controlMenu()">
-                <h2>Agenda</h2>
+                <h2>{{page.slice(0,1)| uppercase}}{{page.slice(1)}}</h2>
             </div>
         </div>
     </header>
      
     <div class="container-home">
-            <app-menu *ngIf="isALiveMenu" [class.menu-responsive]="isALiveMenu" (menu)="controlMenu()"></app-menu>
+            <app-menu *ngIf="isALiveMenu" [class.menu-responsive]="isALiveMenu" (menu)="controlMenu()" (changePage)=" getPageActive()"></app-menu>
             <div class="container_painel">
                 <router-outlet></router-outlet>
             </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -9,14 +9,16 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class HomeComponent implements OnInit {
   isALiveMenu: boolean = true
-  
+  page!:string
 
-  constructor(private serviceAuth : AuthenticationService,
+  constructor(private activeRoute : ActivatedRoute,
    private router: Router) { }
+ 
 
   ngOnInit(): void {
     if(localStorage.getItem('isLoggedIn')){
       this.router.navigate(['estudar'])
+      this.activeRoute.snapshot.children.map(element => this.page = element.url.join(''))
     }else{
       this.router.navigate(['/login'])
     }       
@@ -26,6 +28,13 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  getPageActive(){
+    setTimeout( () => {
+      this.activeRoute.snapshot.children.map(element => this.page = element.url.join(''))
+    },10)
+    
+  }
+  
   controlMenu(){
     if(this.isALiveMenu == true)
     this.isALiveMenu = false

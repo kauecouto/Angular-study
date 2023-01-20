@@ -57,6 +57,7 @@ app-menu-nav{
     .nav-bar{
         position: fixed;
         width: 100vw;
+        z-index: 9999;
     }
 
 }
