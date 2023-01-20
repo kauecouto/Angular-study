@@ -3,12 +3,13 @@
 @media (max-width: 830px){
     
     .container-menu{
+        position: fixed;
         background-color: rgba(0, 0, 0, 0.888);
         width: 100vw;
         height: 90vh;
         box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.381);
         margin-right: 0;
-        top: -119px;
+        top: 60px;
         z-index: 9999;
         color: rgb(229, 229, 229);
         padding: 0;
