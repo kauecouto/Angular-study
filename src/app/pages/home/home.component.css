@@ -82,6 +82,14 @@ app-menu{
         animation-fill-mode: forwards;
     }
 
+    .container-menu{
+        height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 61px;
+    }
+
     .container-home{
         display: flex;
         justify-content: center;

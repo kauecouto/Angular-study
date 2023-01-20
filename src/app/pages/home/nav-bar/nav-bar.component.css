@@ -51,3 +51,12 @@ h3{
 app-menu-nav{
     position: absolute;
 } 
+
+
+@media (max-width: 830px){
+    .nav-bar{
+        position: fixed;
+        width: 100vw;
+    }
+
+}
