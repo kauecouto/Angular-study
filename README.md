@@ -30,10 +30,12 @@
 # 🎯 Features
 
 <pre>
-- [x] Login/Register com uso de formulário e validação
+- [x] Login/Registro com uso de formulário e validação
 - [x] Pomodoro
 - [x] Design Responsivo
 - [x] Agenda
+- [ ] Perfil
+- [ ] Historico de estudos
 </pre>
 # 📑 Como Posso Rodar a Aplicacao?
 
