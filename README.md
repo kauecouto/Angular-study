@@ -34,6 +34,8 @@
 - [x] Pomodoro
 - [x] Design Responsivo
 - [x] Agenda
+- [ ] Perfil
+- [ ] historico de estudos
 </pre>
 # 📑 Como Posso Rodar a Aplicacao?
 
