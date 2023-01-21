@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     if(localStorage.getItem('isLoggedIn')){
       this.router.navigate(['estudar'])
-      this.activeRoute.snapshot.children.map(element => this.page = element.url.join(''))
+      this.getPageActive()
     }else{
       this.router.navigate(['/login'])
     }       
@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
   getPageActive(){
     setTimeout( () => {
       this.activeRoute.snapshot.children.map(element => this.page = element.url.join(''))
+      this.page = `${this.page.slice(0,1).toUpperCase()}${this.page.slice(1)}`
     },10)
   }
   

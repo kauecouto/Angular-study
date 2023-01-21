@@ -22,8 +22,132 @@ header{
 
 h2{
     display: inline;
-    color: white;
 }
+
+#title_page{
+    color:white;
+}
+
+.box_capa{
+    height: 150px;
+    background-color: grey;
+}
+
+#capa{
+    background-image: url(../../../assets/image/capa.jpg);
+    background-size: 1550px;
+    background-position: center center;
+    height: 150px;
+    width: 100%;
+}
+
+.container_perfil{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.container_settings{
+    display: grid;
+    grid-template-areas: 'perfil perfil'
+                         'pomodoro agenda';
+   padding: 10px; 
+}
+
+.container_settings div{
+    padding: 15px;
+}
+
+.perfil{grid-area: perfil;}
+.pomodoro{grid-area: pomodoro;}
+.agenda{grid-area: agenda;}
+
+.box_perfil{
+    position: relative;
+    top: -70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-perfil{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: rgb(213, 213, 213);
+    border: 5px solid  #007A78;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.405);
+    margin-bottom: 1rem;
+}
+
+.box_settings{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.338) ;
+    border-radius: 8px;
+}
+
+.button_settings{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+    transition: 0.1s;
+    background-color: #e3e5e7;
+}
+
+.button_settings:hover{
+    scale: 1.01;
+    background-color: #dbdbdb;
+}
+
+.button_settings:active{
+    background-color: #c8c8c8;
+}
+.button_settings img{
+    width: 20px;
+    margin: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media(max-width: 830px){
     .container-menu{
@@ -42,25 +166,39 @@ h2{
         padding: 1;
     }
 
+    #capa{
+        background-image: url(../../../assets/image/capa.jpg);
+        background-size: 1400px;
+        background-position: center center;
+        height: 150px;
+        width: 100%;
+    }
+
+    .container_perfil{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container_settings{
+        position: relative;
+        top: -80px;
+    }
+   
 }
 
+@media(max-width:615px){
 
-.box_capa{
-    height: 150px;
-    background-color: grey;
-}
+    .container_settings{
+        display: flex;
+        flex-direction: column;
+        flex:  wrap ;
+        
+    }
 
-#capa{
-    height: 100%;
-    width: 100%;
-}
-
-.img-perfil{
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background-color: rgb(213, 213, 213);
-    border: 5px solid  #007A78;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.405);
-    margin-bottom: 1rem;
+    .box_settings{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
 }

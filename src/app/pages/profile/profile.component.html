@@ -5,23 +5,64 @@
         <app-nav></app-nav>
         <div class="container-menu">
             <div class="box-menu">
-                <img src="../../../assets/image/arrow.svg" alt="image-voltar" id="voltar">
-                <h2>{{page.slice(0,1)| uppercase}}{{page.slice(1)}}</h2>
+                <img src="../../../assets/image/arrow.svg" alt="image-voltar" id="voltar" routerLink="/inicio" >
+                <h2 id="title_page">{{page}}</h2>
             </div>
         </div>
     </header>
     
     <main>
-        <div class="box_capa">
-            <img src="../../../assets/image/capa.jpg" alt="" id="capa">
+        <div id="capa">
+            
         </div>
         <div class="container_perfil">
             <section class="box_perfil">
                 <img src="../../../assets/image/imagem-perfil.png" alt="image" class="img-perfil">
                 <h3>Nome Usuário</h3>
             </section>
-            <section class="box_settings">
-
+            <section class="container_settings">
+                <div class="perfil">
+                    <h2>Perfil</h2>
+                    <div class="box_settings">
+                        <button class="button_settings">
+                            Alterar nome de usuário
+                            <img src="../../../assets/image/pen.svg" alt="">
+                        </button>
+                        <button class="button_settings">
+                            Recuperar senha
+                        </button>
+                        <button class="button_settings">
+                            Alterar foto do perfil
+                            <img src="../../../assets/image/image.svg" alt="">
+                        </button>
+                        <button class="button_settings">
+                            Tema
+                            <img src="../../../assets/image/tema.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="pomodoro">
+                    <h2>Pomodoro</h2>
+                    <div class="box_settings">
+                        <button class="button_settings">
+                            Alterar tempo de Ação
+                            <img src="../../../assets/image/time.svg" alt="">
+                        </button>
+                        <button class="button_settings">
+                            Alterar tempo de Pausa
+                            <img src="../../../assets/image/time.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="agenda">
+                    <h2>Agenda</h2>
+                    <div class="box_settings">
+                        <button class="button_settings">
+                            Categorias da Agenda
+                            
+                        </button>
+                    </div>
+                </div>
             </section>
         </div>
     </main>

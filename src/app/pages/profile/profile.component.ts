@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit {
   getPageActive(){
     setTimeout( () => {
       this.page = this.activeRoute.snapshot.url.join('')
+      this.page = `${this.page.slice(0,1).toUpperCase()}${this.page.slice(1)}`
     },10)
   }
 }
