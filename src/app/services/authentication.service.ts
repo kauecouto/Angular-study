@@ -60,7 +60,8 @@ export class AuthenticationService {
       localStorage.setItem('key' ,this.user.key)
       localStorage.setItem('userName', name)
       this.serviceDataBase.insert(`usuários/${this.user.key}`,{
-        name: name
+        name: name,
+        email: email
       })
     })
   }

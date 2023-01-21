@@ -9,6 +9,8 @@ import { NoDataComponent } from './no-data/no-data.component';
 import { MenuNavComponent } from './nav-bar/menu-nav/menu-nav.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { FormProfileEditComponent } from './form-profile-edit/form-profile-edit.component';
+
 
 
 
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     MenuAsideComponent,
     NavBarComponent,
     MenuNavComponent,
-    NoDataComponent
+    NoDataComponent,
+    FormProfileEditComponent,
+  
   ],
   imports: [
     CommonModule,
@@ -34,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     MenuAsideComponent,
     NavBarComponent,
     MenuNavComponent,
-    NoDataComponent
+    NoDataComponent,
+    FormProfileEditComponent,
   ]
 })
 export class SharedCompModule { }

@@ -14,9 +14,10 @@ import { LoginModule } from './pages/login/login.module';
 import { RegisterModule } from './pages/register/register.module';
 
 
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

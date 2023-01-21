@@ -1,0 +1,33 @@
+<div class="container" *ngIf="false" >
+    <form class="pop_up" [ngClass]="{'invalid': invalid}" name="formulario" >
+        <img src="../../../../../assets/image/x.png" alt="imagem-x" id="button-close" (click)="onEmiterClosePopUp()">
+        <div class="box_title">
+            <h2>Title</h2>
+            
+        </div>    
+        <div class="box_nameUser">
+            <h3>Alterar nome de usuário:</h3>
+            <input type="text">
+        </div>
+        <div class="box_foto">
+            <h3>Alterar foto do perfil:</h3>
+            <input type="file">
+            <img src="#" alt="">
+        </div>
+        <div class="box_tema">
+            <h3>Alterar tema:</h3>
+            <select name="tema" >
+                <option value="claro">Claro</option>
+                <option value="escuro">Escuro</option>
+            </select>
+        </div>
+        <div class="box_acaoPomo">
+            <h3>Alterar tempo de ação do pomodoro:</h3>
+            <input type="number">
+        </div>
+
+
+        <p class="alert_invalid" *ngIf="invalid">Preecha todos os campos!</p>
+        <button type="submit">Salvar</button>
+    </form>
+</div>

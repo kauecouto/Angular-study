@@ -1,3 +1,8 @@
+.container{
+    height: 100vh;
+    background-color: white;
+}
+
 header{
     background-color: #007A78;
 }
@@ -43,7 +48,7 @@ h2{
 
 .container_perfil{
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1.5fr 3.5fr;
 }
 
 .container_settings{
@@ -150,6 +155,8 @@ h2{
 
 
 @media(max-width: 830px){
+    
+
     .container-menu{
         height: 140px;
         display: flex;
@@ -187,7 +194,11 @@ h2{
 }
 
 @media(max-width:615px){
-
+    .container{
+        height: 100%;
+        background-color: white;
+    }
+    
     .container_settings{
         display: flex;
         flex-direction: column;
@@ -196,9 +207,7 @@ h2{
     }
 
     .box_settings{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
     }
 }
