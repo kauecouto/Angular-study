@@ -6,31 +6,27 @@ import { environment } from '../environments/environment'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
-import { InputComponent } from './components/input/input.component';
-import { RegisterComponent } from './pages/register/register.component';
 import { AuthenticationService } from './services/authentication.service';
 import { HomeModule } from './pages/home/home.module';
-import { DataBaseService } from './services/data-base.service';
-import { ProfileComponent } from './pages/profile/profile.component';
-
-
+import { SharedCompModule } from './shared/components/shared-comp.module';
+import { ProfileModule } from './pages/profile/profile.module';
+import { LoginModule } from './pages/login/login.module';
+import { RegisterModule } from './pages/register/register.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    InputComponent,
-    RegisterComponent,
-    ProfileComponent
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HomeModule,
+    SharedCompModule,
+    ProfileModule,
+    LoginModule,
+    RegisterModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [AuthenticationService],

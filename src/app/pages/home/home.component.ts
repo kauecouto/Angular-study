@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
     setTimeout( () => {
       this.activeRoute.snapshot.children.map(element => this.page = element.url.join(''))
     },10)
-    
   }
   
   controlMenu(){

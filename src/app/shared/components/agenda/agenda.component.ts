@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, OnChanges } from '@angular/core';
 import { DataForm } from 'src/app/models/dataForm';
 import { DataBaseService } from 'src/app/services/data-base.service';
-import { Date } from '../../models/date';
+import { Date } from '../../../models/date';
 
 @Component({
   selector: 'app-agenda',

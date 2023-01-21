@@ -60,6 +60,7 @@ button{
 }
 
 #delete_icon{
+    width: 20px;
     display: inline;
     position: absolute;
     bottom: 10px;
