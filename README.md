@@ -35,7 +35,7 @@
 - [x] Design Responsivo
 - [x] Agenda
 - [ ] Perfil
-- [ ] historico de estudos
+- [ ] Historico de estudos
 </pre>
 # 📑 Como Posso Rodar a Aplicacao?
 
