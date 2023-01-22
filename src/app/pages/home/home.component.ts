@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { dataProfile } from 'src/app/models/dataProfile';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { DataBaseService } from 'src/app/services/data-base.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,13 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  User!: dataProfile | any
   isALiveMenu: boolean = true
   page!:string
 
   constructor(private activeRoute : ActivatedRoute,
-   private router: Router) { }
+   private router: Router,
+   private serviceDataBase: DataBaseService) { }
  
 
   ngOnInit(): void {
@@ -22,7 +26,7 @@ export class HomeComponent implements OnInit {
     }else{
       this.router.navigate(['/login'])
     }       
-
+    this.getUser()
     if(window.innerWidth <= 830){
       this.isALiveMenu = false
     }
@@ -40,5 +44,20 @@ export class HomeComponent implements OnInit {
     this.isALiveMenu = false
     else
     this.isALiveMenu = true
+  }
+
+  getUser(){
+    this.serviceDataBase.getAll(`usuários/${localStorage.getItem('key')}`).subscribe( {
+      next: result => {
+      this.User = result[0]
+      if(this.User.theme == 'escuro'){
+        document.body.classList.add('dark-theme')
+      }else{
+        document.body.classList.remove('dark-theme')
+      }
+    },
+      error: err => console.error(err)
+    }
+    ) 
   }
 }

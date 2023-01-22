@@ -61,7 +61,12 @@ export class AuthenticationService {
       localStorage.setItem('userName', name)
       this.serviceDataBase.insert(`usuários/${this.user.key}`,{
         name: name,
-        email: email
+        email: email,
+        fotoProfile: 'https://firebasestorage.googleapis.com/v0/b/projeto-study-2ed9d.appspot.com/o/imagens%2Fimagem-perfil.png?alt=media&token=a2dc237f-f568-448e-8933-1e9591795851',
+        theme: 'claro',
+        timePomo: 25,
+        pausaPomo: 5,
+        categorysAgenda: ['Reunião','Lazer','Trabalho','Estudo','Tarefa']
       })
     })
   }
@@ -74,7 +79,7 @@ export class AuthenticationService {
 
   recoverPassword(email: string){
     this.firebaseAuth.sendPasswordResetEmail(email)
-    .then(res => alert('Email de recuperação de senha enviado!'))
+    .then(res => alert(`Email de recuperação de senha enviado para ${email}`))
     .catch( err => alert('Email não possui conta cadastrada!'))
   }
 }

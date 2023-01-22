@@ -1,9 +1,9 @@
-<div>
+<div >
     <button (click)=" openPopUp()">Adicionar</button>
     <h3 *ngIf="date">{{ date.day }} de {{date.month}} - {{ date.year }}</h3>
     <div class="container">
          
-            <ul class="list-hours" *ngIf="records.length > 0;else  MensageEmpty">
+            <ul class="list-hours" *ngIf="IsALiveRecord ;else  MensageEmpty">
                 <li 
                  *ngFor="let record of records, let i = index"  [ngStyle]="{'background-color':  record.color }">
                    <div (click)="openPopUp(record)">

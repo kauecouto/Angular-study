@@ -1,10 +1,15 @@
+
+
 .container{
     display: flex;
     flex-direction: column;
+    color: black;
     /* 
     grid-template-columns: 0.057fr 1fr;
     grid-template-areas: 'hours' 'list-hours'; */
+    
 }
+
 
 h3{
     font-size: 18px;
@@ -47,6 +52,7 @@ button{
     padding: 10px;
     border: 0.2px solid rgba(128, 128, 128, 0.605);
     border-radius: 5px;
+    transition: 0.2s;
 }
 
 .list-hours li:hover {

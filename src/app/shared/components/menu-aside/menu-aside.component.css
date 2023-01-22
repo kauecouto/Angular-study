@@ -1,6 +1,7 @@
 
 .container-menu{
-    background-color: white;
+    background-color: var(--background);
+    color: var(--text-body);
     width: 250px;
     height: 680px;
     border-radius: 12px;
@@ -61,6 +62,7 @@ button{
     border: none;
     background-color: transparent;
     transition: 0.3s;
+    color: var(--text-secundary);
 }
 
 button:hover{
@@ -92,7 +94,7 @@ button img{
 }
 
 .constainer_illustration p{
-    color: grey;
+    color: var(--text-secundary);
     font-size: 14px;
 }
 

@@ -1,10 +1,10 @@
 .container{
     height: 100vh;
-    background-color: white;
+    color: var(--text-body);
 }
 
 header{
-    background-color: #007A78;
+    background-color: var(--primary);
 }
 
 .container-menu{
@@ -23,10 +23,16 @@ header{
 #voltar{
     position: absolute;
     left: 15vw;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-h2{
-    display: inline;
+#voltar:hover{
+    scale: 1.06;
+}
+
+div h2{
+    margin: 13px 0;
 }
 
 #title_page{
@@ -49,6 +55,7 @@ h2{
 .container_perfil{
     display: grid;
     grid-template-columns: 1.5fr 3.5fr;
+    background-color: var(--body);
 }
 
 .container_settings{
@@ -90,6 +97,7 @@ h2{
     padding: 10px;
     border: 1px solid rgba(128, 128, 128, 0.338) ;
     border-radius: 8px;
+    background-color: var(--background);
 }
 
 .button_settings{
@@ -104,6 +112,7 @@ h2{
     margin: 5px;
     transition: 0.1s;
     background-color: #e3e5e7;
+    cursor: pointer;
 }
 
 .button_settings:hover{
@@ -118,41 +127,6 @@ h2{
     width: 20px;
     margin: 8px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media(max-width: 830px){
     
@@ -198,7 +172,7 @@ h2{
         height: 100%;
         background-color: white;
     }
-    
+
     .container_settings{
         display: flex;
         flex-direction: column;

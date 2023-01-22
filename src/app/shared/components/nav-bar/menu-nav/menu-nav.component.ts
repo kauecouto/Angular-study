@@ -15,6 +15,8 @@ export class MenuNavComponent implements OnInit {
   }
 
   loggout(){
+    const comfirm = confirm('Deseja realmente sair?')
+    if(comfirm)
     this.serviceAuthetication.Loggout()
   }
 }

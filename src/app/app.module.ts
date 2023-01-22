@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { environment } from '../environments/environment'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +29,7 @@ import { RegisterModule } from './pages/register/register.module';
     ProfileModule,
     LoginModule,
     RegisterModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

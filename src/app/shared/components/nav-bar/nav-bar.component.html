@@ -6,7 +6,7 @@
         </div>
         <div class="container-menu">
             <img src="../../../assets/image/gear.svg" alt="gear" class="gear" (click)=controlPopUp()>
-            <img src="../../../../assets/image/imagem-perfil.png" alt="foto" class="image-perfil">
+            <img src="{{user?.fotoProfile}}" alt="foto" class="image-perfil" routerLink="/perfil">
         </div>
         <app-menu-nav [openPopUp]="openPopUp"></app-menu-nav>
     </div>

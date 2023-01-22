@@ -4,9 +4,10 @@
 }
 
 .campo{
-    background-color: white;
+    background-color: var(--background);
     border-radius: 12px;
     margin: 1rem; 
+    color: var(--text-body);
 }
 
 .calendario{

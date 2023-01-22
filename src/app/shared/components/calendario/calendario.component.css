@@ -2,6 +2,7 @@ div{
     width: 300px;
     display: flex;
     flex-direction: column;
+    
 }
 
 h2{
@@ -37,7 +38,7 @@ header button:active{
 }
 
 table{
-    background-color: white;
+    background-color: var(--background);
     border-collapse: collapse;
 }
 

@@ -1,10 +1,10 @@
 .view-home{
-    background-color: #EEEEEE;
+    background-color: var(--body);
     
 }
 
 header{
-    background-color: #007A78;
+    background-color: var(--primary);
 }
 
 .container-menu{
@@ -45,6 +45,7 @@ app-menu{
     left: -10px;
     animation: anima 0.3s;
     animation-fill-mode: forwards;
+    
 }
 
 .container_painel{

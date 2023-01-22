@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, IterableChanges, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { DataForm } from 'src/app/models/dataForm';
+import { dataProfile } from 'src/app/models/dataProfile';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { DataBaseService } from 'src/app/services/data-base.service';
 import { __values } from 'tslib';
@@ -11,13 +12,15 @@ import { __values } from 'tslib';
   styleUrls: ['./form-agenda.component.css']
 })
 export class FormAgendaComponent implements OnInit, OnChanges {
+  user!: dataProfile | any
+  categorysCurrent: string[] = []
   @Input() data!: DataForm
   @Output() isALivePopUpAgenda = new EventEmitter()
   invalid: boolean = false
   constructor(private serviceDataBase: DataBaseService, private serviceAuth: AuthenticationService) { }
 
   ngOnInit(): void { 
-    
+    this.getUser()
   }
 
   ngOnChanges(): void {
@@ -25,7 +28,22 @@ export class FormAgendaComponent implements OnInit, OnChanges {
       this.data.dateStart = `${this.data.year}-${this.data.monthNumber}-${this.data.day}`
     }
   }
-    
+  
+  getUser(){
+    this.serviceDataBase.getAll(`usuários/${localStorage.getItem('key')}`).subscribe( {
+      next: result => {
+      this.user = result[0]
+      if(this.categorysCurrent.length == 0){
+        for( let i = 0; i <= Object.keys(this.user.categorysAgenda).length - 1; i++){
+          this.categorysCurrent.push(this.user.categorysAgenda[i])
+        } 
+      }
+    },
+      error: err => console.error(err)
+    }
+    ) 
+  }
+
   onEmiterClosePopUp(){
     this.isALivePopUpAgenda.emit()
   }

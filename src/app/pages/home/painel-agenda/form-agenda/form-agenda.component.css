@@ -15,8 +15,8 @@
 .pop_up{
     max-width: 700px;
     width: 100%;
-    
-    background-color: white;
+    background-color: var(--background);
+    color: var(--text-body);
     border-radius: 18px;
     padding: 1.3rem;
 }
@@ -59,7 +59,7 @@
 }
 
 .area_title input::placeholder{
-    color: black;
+    color: var(--text-body);
     height: 50px;
     line-height: 50px;
     font-size: 1.4rem;
@@ -82,9 +82,14 @@
 }
 
 .box_description textarea{
+    background-color: transparent;
     padding: 0.5rem 0;
     border: none;
     width: 100%;
+}
+
+.box_description textarea::placeholder{
+    color: var(--text-body);
 }
 
 .box_description textarea:focus{

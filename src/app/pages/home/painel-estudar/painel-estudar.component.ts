@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { dataProfile } from 'src/app/models/dataProfile';
+import { DataBaseService } from 'src/app/services/data-base.service';
 
 @Component({
   selector: 'app-estudar',
@@ -6,6 +8,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./painel-estudar.component.css', './painel-estudar.reponsive.component.css']
 })
 export class PainelEstudarComponent implements OnInit, OnDestroy {
+  user!: dataProfile | any
   minutes: number = 25
   seconds: number = 0
   
@@ -21,12 +24,27 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
   som: any =  new Audio('../../../assets/audio/lo-fi.mp3')
   alarme : any = new Audio('../../../assets/audio/som-alarme.mp3')
   volume: number = 1
-  constructor() { }
+  constructor(private serviceDataBase: DataBaseService) { }
 
   ngOnInit(): void {
+    this.getUser()
     this.som = new Audio(this.somStorage)
     this.volume = Number(localStorage.getItem('volumeMusic'))
     this.som.volume = this.volume
+  }
+
+  getUser(){
+    this.serviceDataBase.getAll(`usuários/${localStorage.getItem('key')}`).subscribe( {
+      next: result => {
+      this.user = result[0]
+      if(this.user.timePomo > 0){
+        this.minutes = this.user.timePomo
+      }
+      
+    },
+      error: err => console.error(err)
+    }
+    ) 
   }
 
   changeMusic(evento: string){
@@ -89,7 +107,12 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
   }
 
   resetar(){
-    this.minutes = 25
+    if(this.user.timePomo > 0){
+      this.minutes = this.user.timePomo
+    }else{
+      this.minutes = 25
+    }
+    
     this.seconds = 0
     this.btnIniciarActive = true
     clearInterval(this.timer_interval)
@@ -108,7 +131,11 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
   }
 
   onInterval(){
-    this.minutes = 4
+    if(this.user.pausaPomo > 0){
+      this.minutes = this.user.pausaPomo -1
+    }else{
+      this.minutes = 4
+    }
     this.seconds = 59
     this.timer_interval = setInterval(() => {
       this.timer()

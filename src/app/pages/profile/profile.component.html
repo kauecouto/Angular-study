@@ -15,25 +15,25 @@
         <div id="capa"></div>
         <div class="container_perfil">
             <section class="box_perfil">
-                <img src="../../../assets/image/imagem-perfil.png" alt="image" class="img-perfil">
-                <h3>Nome Usuário</h3>
+                <img src="{{User.fotoProfile}}" alt="image" class="img-perfil">
+                <h3>{{User.name}}</h3>
             </section>
             <section class="container_settings">
                 <div class="perfil">
                     <h2>Perfil</h2>
                     <div class="box_settings">
-                        <button class="button_settings">
+                        <button class="button_settings" (click)="controlMenu('name')">
                             Alterar nome de usuário
                             <img src="../../../assets/image/pen.svg" alt="">
                         </button>
-                        <button class="button_settings">
+                        <button class="button_settings" (click)="recoverPassword()">
                             Recuperar senha
                         </button>
-                        <button class="button_settings">
+                        <button class="button_settings" (click)="controlMenu('foto')">
                             Alterar foto do perfil
                             <img src="../../../assets/image/image.svg" alt="">
                         </button>
-                        <button class="button_settings">
+                        <button class="button_settings" (click)="controlMenu('tema')">
                             Tema
                             <img src="../../../assets/image/tema.svg" alt="">
                         </button>
@@ -42,11 +42,11 @@
                 <div class="pomodoro">
                     <h2>Pomodoro</h2>
                     <div class="box_settings">
-                        <button class="button_settings">
+                        <button class="button_settings" (click)="controlMenu('acaoPomo')">
                             Alterar tempo de Ação
                             <img src="../../../assets/image/time.svg" alt="">
                         </button>
-                        <button class="button_settings">
+                        <button class="button_settings" (click)="controlMenu('pausaPomo')">
                             Alterar tempo de Pausa
                             <img src="../../../assets/image/time.svg" alt="">
                         </button>
@@ -55,14 +55,13 @@
                 <div class="agenda">
                     <h2>Agenda</h2>
                     <div class="box_settings">
-                        <button class="button_settings">
+                        <button class="button_settings" (click)="controlMenu('categorias')">
                             Categorias da Agenda
-                            
                         </button>
                     </div>
                 </div>
             </section>
         </div>
     </main>
-    <app-form-profile-edit></app-form-profile-edit>
+    <app-form-profile-edit [isAliveForm]="isALiveForm" [nameForm]="nameForm" (closeForm)="controlMenu()"></app-form-profile-edit>
 </div>

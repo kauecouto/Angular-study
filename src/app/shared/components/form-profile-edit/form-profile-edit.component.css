@@ -10,15 +10,15 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    color: black;
 }
 
 .pop_up{
-    max-width: 700px;
+    max-width: 400px;
     width: 100%;
-    
     background-color: white;
     border-radius: 18px;
-    padding: 1.3rem;
+    padding: 2rem;
 }
 
 #button-close{
@@ -29,149 +29,104 @@
 .pop_up p{
     margin: 5px 10px; 
 }
+.box input, select, .category input{
+    font-size: 1rem;
+    height: 40px;
+    max-width: 400px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 3px;
+    margin-top: 30px;
+}
 
-.area_title{
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90px;
+}
+
+.category div{
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.area_title input{
-    height: 50px;
-    border-radius: 4px;
-    width: 95%;
-    padding: 0.5rem;
-    font-weight: 600;
-    font-size: 1.4rem;
-    background-color: transparent;
-    border: none;
-    transition: 0.3s;
+.category input{
+    height: 30px;
+    margin-top: 0;
 }
 
-.area_title input:hover{
-    background-color: rgba(128, 128, 128, 0.199);
-    border: none;
+.category img{
+    width: 15px;
+    margin: 0 8px;
 }
 
-.area_title input:focus{
-    outline-color:rgb(101, 145, 113);
-    background-color: transparent;
-    border: none;
+.category ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
 }
 
-.area_title input::placeholder{
-    color: black;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    border: none;
-}
-
-
-.area_title img{
-    margin: 0 20px;
-}
-
-.box_description{
-    margin: 0 10px;
-}
-.box_description h4{
-    font-weight: 500;
-    margin-top: 5px;
+.category li{
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: center;
     
 }
 
-.box_description textarea{
-    padding: 0.5rem 0;
+.pausaPomo input, .acaoPomo input{
+    width: 50px;
+    margin-top: 0;
+}
+
+.pausaPomo aside, .acaoPomo aside{
+    margin: 0 8px;
+}
+
+.box_input_pomo{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+
+#file{
     border: none;
-    width: 100%;
 }
 
-.box_description textarea:focus{
-    outline: 0;
-}
-
-.box_custom{
-    margin: 0 10px;
-    max-width: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.box_custom select{
-    padding: 0.3rem 0.4rem;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.589);
-}
-
-select{
-    font-weight: 500;
-    width: 150px;
-}
-
-.container_color{
-    display: flex;
-}
-
-.container_color h3{
-    font-size: 1rem;
-    font-weight: 500;
-    margin-right: 5px;
-}
-
-.area_color{
-    display: flex;
-    align-items: center;
-}
-
-.area_color input{
-    margin: 1px;
-}
-
-.box_hours{
-    margin: 0 10px;
-}
-
-.hours_row{
-    max-width: 340px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0.4rem 0;
-}
-
-.hours_row input{
-    padding: 0.3rem 0.4rem;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.589);
-}
-
-button{
+.btn-adicionar{
     color: white;
     font-size: 0.9rem;
     border-radius: 4px;
     border: none;
     background-color: #007A78;
+    margin: 0 8px;
+    padding: 0.1rem 0.5rem;
+}
+
+.btn-salvar{
+    color: white;
+    font-size: 0.9rem;
+    z-index: 9999;
+    border-radius: 4px;
+    border: none;
+    background-color: #007A78;
     padding: 0.3rem 1rem;
+    margin-top: 10px;
     float: right;
 }
 
-button:active{
+.btn-salvar :active{
     background-color: #015352;
 }
-
-input[type=radio]{
-    width: 20px;
-    height: 20px;
-}
-#cor1{accent-color:  #A09BFA;}
-#cor2{accent-color:  #A1BEFF;}
-#cor3{accent-color:  #FCD658;}
-#cor4{accent-color:  #FFB778;}
-#cor5{accent-color:  #FF877D;}
-#cor6{accent-color:  #FFFFFF;}
 
 .invalid{
     border: 1px solid red;

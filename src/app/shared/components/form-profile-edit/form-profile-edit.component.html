@@ -1,33 +1,53 @@
-<div class="container" *ngIf="false" >
-    <form class="pop_up" [ngClass]="{'invalid': invalid}" name="formulario" >
-        <img src="../../../../../assets/image/x.png" alt="imagem-x" id="button-close" (click)="onEmiterClosePopUp()">
-        <div class="box_title">
-            <h2>Title</h2>
-            
-        </div>    
-        <div class="box_nameUser">
+<div class="container" *ngIf="isAliveForm" >
+    <form class="pop_up" [ngClass]="{'invalid': invalid}" name="formulario" (submit)="recordDb()">
+        <img src="../../../../../assets/image/x.png" alt="imagem-x" id="button-close" (click)="onEmiterClosePopUp()">    
+        <div class="box nameUser" *ngIf="nameForm == 'name'">
             <h3>Alterar nome de usuário:</h3>
-            <input type="text">
+            <input type="text" name="name" [(ngModel)]="data.name">
         </div>
-        <div class="box_foto">
+        <div class="box foto" *ngIf="nameForm == 'foto'">
             <h3>Alterar foto do perfil:</h3>
-            <input type="file">
-            <img src="#" alt="">
+            <input type="file" id="file" name="fotoPerfil" (change)="uploadFoto($event)">
         </div>
-        <div class="box_tema">
+        <div class="box tema" *ngIf="nameForm == 'tema'">
             <h3>Alterar tema:</h3>
-            <select name="tema" >
+            <select name="tema" name="tema" [(ngModel)]="data.theme">
                 <option value="claro">Claro</option>
                 <option value="escuro">Escuro</option>
             </select>
         </div>
-        <div class="box_acaoPomo">
+        <div class="box acaoPomo" *ngIf="nameForm == 'acaoPomo'" >
             <h3>Alterar tempo de ação do pomodoro:</h3>
-            <input type="number">
+            <div class="box_input_pomo">
+                <input type="number" name="acaoPomo" [(ngModel)]="data.timePomo"><aside>min</aside>
+            </div>
+            
+        </div>
+        <div class="box pausaPomo" *ngIf="nameForm == 'pausaPomo'">
+            <h3>Alterar tempo de pausa do pomodoro:</h3>
+            <div class="box_input_pomo">
+                <input type="number" name="pausaPomo" [(ngModel)]="data.pausaPomo"><aside>min</aside>
+            </div>
+            
+        </div>
+        <div class="category" *ngIf="nameForm == 'categorias'">
+            <h3>Alterar categorias da agenda:</h3>
+            <div>
+                <input type="text" name="category" placeholder="Adicione uma Categoria" #inputCategory>
+                <button type="button" class="btn-adicionar" (click)="addCategory(inputCategory.value)">Adicionar</button>
+            </div>
+            <ul>
+                <li *ngFor="let category of categorysCurrent ; let i = index">
+                    {{category}}
+                    <img src="../../../assets/image/delete.svg" alt="image-delete"  id="delete_icon" 
+                    (click)="deleteCategory(i)">
+                </li>
+            </ul>
+            
+            
         </div>
 
-
         <p class="alert_invalid" *ngIf="invalid">Preecha todos os campos!</p>
-        <button type="submit">Salvar</button>
+        <button type="submit" class="btn-salvar">Salvar</button>
     </form>
 </div>

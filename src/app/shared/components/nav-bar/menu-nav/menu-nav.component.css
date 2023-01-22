@@ -16,7 +16,7 @@ h3{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 230px;
+    
     position:absolute;
     top: 40px;
     right: 10px;
@@ -55,8 +55,14 @@ li{
     border-radius: 10px;
     cursor: pointer;
     font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+li:hover{
+    scale: 1.15;
+    
 }
 
 li:active{
-    background-color: #009c9a;
+    background-color: #007472;
 }

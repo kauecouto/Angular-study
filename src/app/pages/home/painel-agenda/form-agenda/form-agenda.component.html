@@ -2,7 +2,7 @@
     <form class="pop_up" [ngClass]="{'invalid': invalid}" name="formulario" (submit)="insertRecordDB()">
         <img src="../../../../../assets/image/x.png" alt="imagem-x" id="button-close" (click)="onEmiterClosePopUp()">
         <div class="box_title">
-            <p>{{data.day}}, {{ data.month}} de {{ data.year }} </p>
+            <p>{{ data.day }}, {{ data.month }} de {{ data.year }}</p>
             <div class="area_title">
                 <input type="text" placeholder="Titulo" name="title" [(ngModel)]="data.title" [ngClass]="{'invalid': invalid}">
             </div>
@@ -13,12 +13,8 @@
         </div>
         <div class="box_custom">
             <select name="Categoria" id="" [(ngModel)]="data.category" [ngClass]="{'invalid': invalid}">
-                <option value="">Categoria</option>  
-                <option value="Reunião">Reunião</option>
-                <option value="Lazer">Lazer</option>
-                <option value="Estudo">Estudo</option>
-                <option value="Tarefa">Tarefa</option>
-                <option value="Trabalho">Trabalho</option>
+                <option *ngFor="let category of categorysCurrent" value="{{category}}">{{category}}</option>  
+                
             </select>
             <div class="container_color">
                 <div class="area_color">

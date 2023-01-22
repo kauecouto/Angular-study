@@ -11,6 +11,7 @@ import { Date } from '../../../models/date';
 export class AgendaComponent implements OnInit, OnChanges{
   hours : string[] = ['1h','2h','3h','4h','5h','6h','7h','8h','9h','10h','11h','12h','13h','14h','15h','16h','17h','18h','19h','20h','21h','22h','23h']
   records!: any[]
+  IsALiveRecord: boolean = false
   @Input() date: Date = {
     day:  '',
     month: '',
@@ -31,12 +32,19 @@ export class AgendaComponent implements OnInit, OnChanges{
 
   ngOnInit(){
     this.retrieveRecordAll()
+
   }
 
 
   retrieveRecordAll(){
     this.serviceDataBase.getAll(`usuários/${localStorage.getItem('key')}/Registros_Agenda/${this.url}`).subscribe(data => {
       this.records = data
+      if(this.records.length == 0){
+        this.IsALiveRecord = false
+      }else{
+        this.IsALiveRecord = true
+      }
+      
     })
   }
 

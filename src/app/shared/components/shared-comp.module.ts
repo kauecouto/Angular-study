@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FormProfileEditComponent } from './form-profile-edit/form-profile-edit.component';
 
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 
 
 
@@ -29,7 +30,8 @@ import { FormProfileEditComponent } from './form-profile-edit/form-profile-edit.
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    AngularFireStorageModule
   ], 
   exports: [
     AgendaComponent,

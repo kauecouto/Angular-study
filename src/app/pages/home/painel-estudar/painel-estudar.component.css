@@ -7,8 +7,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: var(--background);
     border-radius: 12px;
+    color: var(--text-body);
 }
 
 h1{
@@ -88,6 +89,7 @@ button{
     border-radius: 5rem;
     border: 2px solid white;
     background-color: rgba(127, 255, 212, 0.559);
+    color: var(--text-body);
     margin: 0.8rem;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.348);
     transition: 0.3s;
@@ -102,12 +104,12 @@ button:active{
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.552);
 }
 .btn-resetar{
-    color: #005554;
+    color:  var(--text-body);
     background-color: transparent;
 }
 
 .btn-parar{
-    color: #4f3802;
+    color: var(--text-body);
     background-color: #ffb54587;
 }
 
