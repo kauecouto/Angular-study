@@ -2,7 +2,11 @@
     <div class="container-menu" >
         <img src="../../../assets/image/menu-hamburguer-grey.png" alt="imagem-exit" id="exit" (click)="onMenu()">
         <div class="perfil">
-            <img src="{{obj.fotoProfile}}" alt="image" class="img-perfil" routerLink="/perfil">
+
+            <img src="{{obj.fotoProfile}}" alt="image" class="img-perfil" routerLink="/perfil" *ngIf="obj.fotoProfile; else Loading">
+            <ng-template #Loading>
+                <app-loading width="90px"></app-loading>
+            </ng-template>
             <h3>{{ obj.name }}</h3>
         </div>
         <div class="container-buttons">

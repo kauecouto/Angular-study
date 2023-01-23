@@ -1,19 +1,20 @@
 <section class="container">
     <h1>Histórico de estudos</h1>
-    <div class="container_estudos" *ngIf="historic.length > 0;else MensageEmpty">
-        <div class="box_estudo" *ngFor="let ciclo of historic">
-            <div>
-                <h3>{{ciclo.title}}</h3>
-                <img src="../../../../assets/image/check.svg" alt="">
-            </div>
-            <div class="box_info">
-                <p>{{ciclo.time}}</p>
-                <p class="date">{{ciclo.date}}</p>
+    <div *ngIf="historic">
+        <div class="container_estudos" *ngIf="historic.length > 0;else MensageEmpty">
+            <div class="box_estudo" *ngFor="let ciclo of historic">
+                <div>
+                    <h3>{{ciclo.title}}</h3>
+                    <img src="../../../../assets/image/check.svg" alt="">
+                </div>
+                <div class="box_info">
+                    <p>{{ciclo.time}}</p>
+                    <p class="date">{{ciclo.date}}</p>
+                </div>
             </div>
         </div>
-        
-        
     </div>
+    
     <ng-template  #MensageEmpty>
         <app-no-data text="Sem histórico de estudos"></app-no-data>
     </ng-template>

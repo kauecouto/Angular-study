@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { dataProfile } from 'src/app/models/dataProfile';
 import { Date } from 'src/app/models/date';
@@ -103,7 +102,7 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
         this.iniciar()
         alert('tempo acabou!')
         this.serviceDataBase.insert(`usuários/${localStorage.getItem('key')}/historico_Estudo`,{
-          title: 'Ciclo Concluído',
+          title: 'Ciclo de estudo concluído',
           time: `${this.user.timePomo}min > ${this.user.pausaPomo}min`,
           date: this.dateFormatted
         })

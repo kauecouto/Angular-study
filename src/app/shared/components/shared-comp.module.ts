@@ -12,7 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { FormProfileEditComponent } from './form-profile-edit/form-profile-edit.component';
 
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { HistoricPomoComponent } from './historic-pomo/historic-pomo.component'
+import { HistoricPomoComponent } from './historic-pomo/historic-pomo.component';
+import { LoadingComponent } from './loading/loading.component'
 
 
 
@@ -27,6 +28,7 @@ import { HistoricPomoComponent } from './historic-pomo/historic-pomo.component'
     NoDataComponent,
     FormProfileEditComponent,
     HistoricPomoComponent,
+    LoadingComponent,
   
   ],
   imports: [
@@ -44,7 +46,8 @@ import { HistoricPomoComponent } from './historic-pomo/historic-pomo.component'
     MenuNavComponent,
     NoDataComponent,
     FormProfileEditComponent,
-    HistoricPomoComponent
+    HistoricPomoComponent,
+    LoadingComponent
   ]
 })
 export class SharedCompModule { }

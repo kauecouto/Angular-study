@@ -13,10 +13,10 @@ export class AgendaComponent implements OnInit, OnChanges{
   records!: any[]
   IsALiveRecord: boolean = false
   @Input() date: Date = {
-    day:  '',
-    month: '',
-    monthNumber: '',
-    year: ''
+    day:  0,
+    month: 0,
+    monthNumber: 0,
+    year: 0
   }
   dateUrl!: Date
   url: string = `${this.date.year}-0${this.date.monthNumber}-${this.date.day}`
@@ -25,9 +25,11 @@ export class AgendaComponent implements OnInit, OnChanges{
 
   constructor(private serviceDataBase: DataBaseService) { }
   ngOnChanges(): void {
-    this.checkDate()
-    this.url = `${this.dateUrl.year}-${this.dateUrl.monthNumber}-${this.dateUrl.day}`
-    this.retrieveRecordAll()
+    setTimeout(()=>{
+      this.checkDate()
+      this.url = `${this.dateUrl.year}-${this.dateUrl.monthNumber}-${this.dateUrl.day}`
+      this.retrieveRecordAll()
+    },10)
   }
 
   ngOnInit(){
@@ -56,33 +58,34 @@ export class AgendaComponent implements OnInit, OnChanges{
   }
 
   checkDate(){
-    if(this.date.day < 10 && this.date.monthNumber < 10){
-      this.dateUrl = {
-        day: `0${this.date.day}`,
-        month: `${this.date.month}`,
-        monthNumber: `0${this.date.monthNumber}`,
-        year: this.date.year,
-        hour: this.date.hour
-      }
-    }else if(this.date.day < 10){
+    
+      if(this.date.day < 10 && this.date.monthNumber < 10){
         this.dateUrl = {
           day: `0${this.date.day}`,
           month: `${this.date.month}`,
-          monthNumber: `${this.date.monthNumber}`,
+          monthNumber: `0${this.date.monthNumber}`,
           year: this.date.year,
           hour: this.date.hour
+        }
+      }else if(this.date.day < 10){
+          this.dateUrl = {
+            day: `0${this.date.day}`,
+            month: `${this.date.month}`,
+            monthNumber: `${this.date.monthNumber}`,
+            year: this.date.year,
+            hour: this.date.hour
+        }
+      }else if(this.date.monthNumber < 10){
+        this.dateUrl = {
+          day: `${this.date.day}`,
+          month: `${this.date.month}`,
+          monthNumber: `0${this.date.monthNumber}`,
+          year: this.date.year,
+          hour: this.date.hour
+        }
+      }else{
+        this.dateUrl = this.date
       }
-    }else if(this.date.monthNumber < 10){
-      this.dateUrl = {
-        day: `${this.date.day}`,
-        month: `${this.date.month}`,
-        monthNumber: `0${this.date.monthNumber}`,
-        year: this.date.year,
-        hour: this.date.hour
-      }
-    }else{
-      this.dateUrl = this.date
-    }
   }
 
   openPopUp(data?: DataForm){

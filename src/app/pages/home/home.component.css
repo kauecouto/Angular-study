@@ -48,6 +48,17 @@ app-menu{
     
 }
 
+.container_loading{
+    z-index: 999;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.23);
+}
+
 .container_painel{
     width: 100%;
 }

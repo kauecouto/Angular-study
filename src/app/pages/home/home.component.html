@@ -1,4 +1,7 @@
 <div class="view-home">
+    <div class="container_loading" *ngIf="!User">
+        <app-loading></app-loading>
+    </div>
     <header>
         <app-nav></app-nav>
         <div class="container-menu">
@@ -8,7 +11,7 @@
             </div>
         </div>
     </header>
-     
+    
     <div class="container-home">
             <app-menu *ngIf="isALiveMenu" [class.menu-responsive]="isALiveMenu" (menu)="controlMenu()" (changePage)=" getPageActive()"></app-menu>
             <div class="container_painel">

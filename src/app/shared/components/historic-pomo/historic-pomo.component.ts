@@ -20,7 +20,6 @@ export class HistoricPomoComponent implements OnInit {
     this.serviceDataBase.getAll(`usuários/${localStorage.getItem('key')}/historico_Estudo`).subscribe(
       result => {
         this.historic = result
-        console.log(this.historic)
       }
     )
   }

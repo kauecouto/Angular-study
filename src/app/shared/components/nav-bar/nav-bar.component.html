@@ -6,7 +6,10 @@
         </div>
         <div class="container-menu">
             <img src="../../../assets/image/gear.svg" alt="gear" class="gear" (click)=controlPopUp()>
-            <img src="{{user?.fotoProfile}}" alt="foto" class="image-perfil" routerLink="/perfil">
+            <img src="{{user?.fotoProfile}}" alt="foto" class="image-perfil" routerLink="/perfil" *ngIf="user?.fotoProfile; else Loading">
+            <ng-template #Loading>
+                <app-loading width="30px"></app-loading>
+            </ng-template>
         </div>
         <app-menu-nav [openPopUp]="openPopUp"></app-menu-nav>
     </div>
