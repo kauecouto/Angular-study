@@ -53,7 +53,7 @@ aside{
 }
 
 tbody aside:hover,  .active{
-    background-color: #D9EBEB;
+    background-color: var(--active-calendar);
 }
 
 tbody aside:active{

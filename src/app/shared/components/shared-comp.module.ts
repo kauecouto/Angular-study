@@ -11,7 +11,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FormProfileEditComponent } from './form-profile-edit/form-profile-edit.component';
 
-import { AngularFireStorageModule } from '@angular/fire/compat/storage'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { HistoricPomoComponent } from './historic-pomo/historic-pomo.component'
 
 
 
@@ -25,6 +26,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage'
     MenuNavComponent,
     NoDataComponent,
     FormProfileEditComponent,
+    HistoricPomoComponent,
   
   ],
   imports: [
@@ -42,6 +44,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage'
     MenuNavComponent,
     NoDataComponent,
     FormProfileEditComponent,
+    HistoricPomoComponent
   ]
 })
 export class SharedCompModule { }

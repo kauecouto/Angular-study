@@ -16,15 +16,17 @@
     --text-header: #fff;
     --text-body: black;
     --text-secundary: #646464;
+    --active-calendar: #D9EBEB;
 }
 
 :root .dark-theme{
-    --primary: #005958;
-    --body: #4D4D4D;
-    --background: #A0A0A0;
+    --primary: #3a5c5c;
+    --body: #47494b;
+    --background: #6e6e6e;
     --text-header: #fff;
     --text-body: #fff;
     --text-secundary: #f1f1f1;
+    --active-calendar:#484a4a; 
 }
 
 body{

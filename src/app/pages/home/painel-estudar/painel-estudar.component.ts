@@ -1,5 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { dataProfile } from 'src/app/models/dataProfile';
+import { Date } from 'src/app/models/date';
 import { DataBaseService } from 'src/app/services/data-base.service';
 
 @Component({
@@ -9,6 +11,14 @@ import { DataBaseService } from 'src/app/services/data-base.service';
 })
 export class PainelEstudarComponent implements OnInit, OnDestroy {
   user!: dataProfile | any
+  date: Date = {
+    day : new Date().getDate(),
+    month: new Date().getMonth() +1,
+    monthNumber: '',
+    year: new Date().getFullYear()
+  }
+  dateFormatted!: string
+
   minutes: number = 25
   seconds: number = 0
   
@@ -31,6 +41,13 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
     this.som = new Audio(this.somStorage)
     this.volume = Number(localStorage.getItem('volumeMusic'))
     this.som.volume = this.volume
+    if(this.date.day < 10 && this.date.month < 10){
+      this.dateFormatted = `0${this.date.day}/0${this.date.month}/${this.date.year}`
+    }else if(this.date.day < 10){
+        this.dateFormatted = `0${this.date.day}/${this.date.month}/${this.date.year}`
+    }else if(this.date.month < 10){
+      this.dateFormatted = `${this.date.day}/0${this.date.month}/${this.date.year}`
+    }
   }
 
   getUser(){
@@ -85,6 +102,11 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
         clearInterval(this.timer_interval)
         this.iniciar()
         alert('tempo acabou!')
+        this.serviceDataBase.insert(`usuários/${localStorage.getItem('key')}/historico_Estudo`,{
+          title: 'Ciclo Concluído',
+          time: `${this.user.timePomo}min > ${this.user.pausaPomo}min`,
+          date: this.dateFormatted
+        })
       }
 
     }

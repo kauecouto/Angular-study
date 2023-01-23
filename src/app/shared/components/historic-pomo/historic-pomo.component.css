@@ -1,0 +1,48 @@
+.container{
+    margin: auto;
+    margin-top: 30px;
+    max-width: 1000px;
+    background-color: var(--background);
+    border-radius: 10px;
+    padding: 30px;
+    color: var(--text-body);
+}
+
+.container_estudos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+.box_estudo{
+    width: 100%;
+    margin: 10px;
+    margin-left: 0;
+    background-color: var(--active-calendar);
+    padding: 13px;
+    border-radius: 10px;
+}
+
+
+
+.box_estudo  div{
+    display: flex;
+    
+}
+
+.box_estudo div img{
+    width: 30px;
+    margin: 0 5px;
+}
+
+.box_info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+

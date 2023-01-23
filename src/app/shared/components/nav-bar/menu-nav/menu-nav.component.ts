@@ -18,5 +18,6 @@ export class MenuNavComponent implements OnInit {
     const comfirm = confirm('Deseja realmente sair?')
     if(comfirm)
     this.serviceAuthetication.Loggout()
+    document.body.classList.remove('dark-theme')
   }
 }

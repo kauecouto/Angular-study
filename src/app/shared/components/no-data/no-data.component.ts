@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-no-data',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./no-data.component.css']
 })
 export class NoDataComponent implements OnInit {
-
+  @Input() text: string = 'Seu dia está vazio'
   constructor() { }
 
   ngOnInit(): void {
