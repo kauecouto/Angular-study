@@ -188,3 +188,7 @@ textarea:focus{
     padding: 10px;
     background-color: grey;
 }
+
+@media(max-width:830px){
+    
+}

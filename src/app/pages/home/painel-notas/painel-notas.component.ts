@@ -8,6 +8,7 @@ import { DataBaseService } from 'src/app/services/data-base.service';
   styleUrls: ['./painel-notas.component.css']
 })
 export class PainelNotasComponent implements OnInit {
+  responsive: boolean = false
   invalid: boolean = false
   color: string = '#FCD658'
   pages: string[] = ['Page1','Page2','Page3']
@@ -27,7 +28,11 @@ export class PainelNotasComponent implements OnInit {
     this.pageActive = this.pages[0]
     console.log(this.pageActive)
     this.getAll()
-    
+    if(window.innerWidth <= 830){
+      this.responsive = true
+    }else{
+      this.responsive = false
+    }
   }
 
   getMedidas(id: string){

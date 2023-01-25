@@ -1,7 +1,10 @@
 <div class="container">
-   <aside class="sticker_page" (click)="changePage(0)">Pagina 1</aside>
-   <aside class="sticker_page" (click)="changePage(1)">Pagina 2</aside>
-   <aside class="sticker_page" (click)="changePage(2)">Pagina 3</aside>
+    <aside class="sticker_page" (click)="changePage(0)" *ngIf="!responsive" > Pagina 1  </aside>
+   <aside class="sticker_page" (click)="changePage(1)" *ngIf="!responsive" >Pagina 2 </aside>
+   <aside class="sticker_page" (click)="changePage(2)" *ngIf="!responsive" > Pagina 3 </aside>
+   <aside class="sticker_page" (click)="changePage(0)" *ngIf="responsive" > 01  </aside>
+   <aside class="sticker_page" (click)="changePage(1)" *ngIf="responsive" > 02 </aside>
+   <aside class="sticker_page" (click)="changePage(2)" *ngIf="responsive" > 03 </aside>
    <button class="btn_new_nota" (click)="newNote()">Nova nota</button>
     <div class="container-notes" (dragover)="getMedidas('nota')">
             <div class="example-boundary ">

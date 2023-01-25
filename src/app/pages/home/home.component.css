@@ -112,7 +112,7 @@ app-menu{
 
     .container_painel{
         width: 100%;
-        display: flex;
+        padding: 5px;
         justify-content: center;
         align-items: center;
     }
