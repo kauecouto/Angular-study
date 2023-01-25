@@ -128,7 +128,7 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
 
     this.timer_iniciar = setInterval(() => {
       this.timer()
-    },10)
+    },1000)
     this.paused = false
     this.btnIniciarActive = false     
     this.classRotate = 'active-rotating'
@@ -169,7 +169,7 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
     this.seconds = 59
     this.timer_interval = setInterval(() => {
       this.timer()
-    },10)
+    },1000)
     this.classRotate = 'active-rotating-interval'
     this.isStudy = false
     this.som.play()
