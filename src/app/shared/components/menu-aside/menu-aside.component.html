@@ -3,7 +3,8 @@
         <img src="../../../assets/image/menu-hamburguer-grey.png" alt="imagem-exit" id="exit" (click)="onMenu()">
         <div class="perfil">
 
-            <img src="{{obj.fotoProfile}}" alt="image" class="img-perfil" routerLink="/perfil" *ngIf="obj.fotoProfile; else Loading">
+            
+            <div  [style.background-image]="'url(' + obj.fotoProfile + ')'" class="img-perfil" routerLink="/perfil" *ngIf="obj.fotoProfile; else Loading"></div>
             <ng-template #Loading>
                 <app-loading width="90px"></app-loading>
             </ng-template>

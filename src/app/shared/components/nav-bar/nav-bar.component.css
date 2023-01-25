@@ -42,13 +42,15 @@ h3{
     transition: 0.3s;
 }
 
-.image-perfil{
-    background-color: grey;
-    max-width: 2rem;
+#image-perfil{
+    background: no-repeat center center;
+    background-size: cover;
+    width: 2rem;
     height: 2rem;
-    border-radius: 3rem;
+    border-radius: 50%;
     transition: 0.3s;
     cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.405);
 }
 
 .gear:hover, .image-perfil:hover{

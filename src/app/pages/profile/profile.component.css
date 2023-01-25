@@ -81,7 +81,10 @@ div h2{
     align-items: center;
 }
 
-.img-perfil{
+
+#image-perfil{
+    background: no-repeat center center;
+    background-size: cover;
     width: 140px;
     height: 140px;
     border-radius: 50%;

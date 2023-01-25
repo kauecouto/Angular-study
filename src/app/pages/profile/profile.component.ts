@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getPageActive()
     this.getUser()
+  
   }
 
   controlMenu(nameEdit?:string){
@@ -48,6 +49,7 @@ export class ProfileComponent implements OnInit {
       next: result => {
       this.User = result[0]
       localStorage.setItem('userName', JSON.stringify(this.User.name))
+      
       if(this.User.theme == 'escuro'){
         document.body.classList.add('dark-theme')
       }else{

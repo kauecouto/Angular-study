@@ -37,10 +37,11 @@ h3{
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    background-color: rgb(213, 213, 213);
     border: 5px solid  #007A78;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.405);
     margin-bottom: 1rem;
+    background: no-repeat center center;
+    background-size: cover;
 }
 
 .container-buttons{
