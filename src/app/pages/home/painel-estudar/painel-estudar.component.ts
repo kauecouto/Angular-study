@@ -88,19 +88,27 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
       this.seconds -= 1
     }
 
-    if(this.minutes < 0){
+    if(this.minutes < 0 ){
       this.alarme.play()
+      this.seconds = 0
+      this.minutes = 0
       this.btnIniciarActive = true
       this.classRotate = ''
       
       if(this.isStudy == true){
         clearInterval(this.timer_iniciar)
-        this.onInterval()
         alert('tempo acabou!')
+        this.onInterval()
       }else{
         clearInterval(this.timer_interval)
-        this.iniciar()
-        alert('tempo acabou!')
+        setTimeout(() => {
+          alert('intervalo acabou!')
+          this.iniciar()
+        }, 10);
+        
+        
+        
+        
         this.serviceDataBase.insert(`usuários/${localStorage.getItem('key')}/historico_Estudo`,{
           title: 'Ciclo de estudo concluído',
           time: `${this.user.timePomo}min > ${this.user.pausaPomo}min`,
@@ -112,14 +120,15 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
   }
 
   iniciar(){
-    if(this.paused == false){
-      this.minutes -= 1
-      this.seconds = 59
+    if(this.user.timePomo > 0){
+      this.minutes = this.user.timePomo
+    }else{
+      this.minutes = 25
     }
 
     this.timer_iniciar = setInterval(() => {
       this.timer()
-    },1000)
+    },10)
     this.paused = false
     this.btnIniciarActive = false     
     this.classRotate = 'active-rotating'
@@ -160,7 +169,7 @@ export class PainelEstudarComponent implements OnInit, OnDestroy {
     this.seconds = 59
     this.timer_interval = setInterval(() => {
       this.timer()
-    },1000)
+    },10)
     this.classRotate = 'active-rotating-interval'
     this.isStudy = false
     this.som.play()

@@ -1,7 +1,12 @@
-<section class="container">
+<section class="container"> 
+    
     <h1>Histórico de estudos</h1>
+   <div *ngIf="historic">
+        <h3 id="cont_ciclos">{{historic.length}} Ciclos concluídos</h3>
+    </div>
     <div *ngIf="historic">
-        <div class="container_estudos" *ngIf="historic.length > 0;else MensageEmpty">
+        
+        <div class="container_estudos" *ngIf="historic.length > 0;else MensageEmpty"   >
             <div class="box_estudo" *ngFor="let ciclo of historic">
                 <div>
                     <h3>{{ciclo.title}}</h3>

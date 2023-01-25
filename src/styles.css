@@ -17,6 +17,7 @@
     --text-body: black;
     --text-secundary: #646464;
     --active-calendar: #D9EBEB;
+    --header-notas: #D9EBEB;
 }
 
 :root .dark-theme{
@@ -27,6 +28,7 @@
     --text-body: #fff;
     --text-secundary: #f1f1f1;
     --active-calendar:#484a4a; 
+    --header-notas: #618f8f;
 }
 
 body{

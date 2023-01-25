@@ -68,6 +68,9 @@ export class AuthenticationService {
         pausaPomo: 5,
         categorysAgenda: ['Reunião','Lazer','Trabalho','Estudo','Tarefa']
       })
+      this.serviceDataBase.insert(`usuários/${this.user.key}/Registros_Notes`,{
+        notes: []
+      })
     })
   }
 

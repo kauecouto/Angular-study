@@ -53,6 +53,11 @@ button{
     border: 0.2px solid rgba(128, 128, 128, 0.605);
     border-radius: 5px;
     transition: 0.2s;
+    
+}
+
+.list-hours li div{
+    cursor: pointer;
 }
 
 .list-hours li:hover {

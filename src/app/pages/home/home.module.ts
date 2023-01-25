@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'
 import { FormsModule } from '@angular/forms';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { ListSonsComponent } from './painel-estudar/list-sons/list-sons.component';
 import { PainelEstudarComponent } from './painel-estudar/painel-estudar.component';
@@ -11,6 +12,7 @@ import { PipesModule } from 'src/app/shared/pipes/pipes.module';
 import { PainelAgendaComponent } from './painel-agenda/painel-agenda.component';
 import { FormAgendaComponent } from './painel-agenda/form-agenda/form-agenda.component';
 import { SharedCompModule } from 'src/app/shared/components/shared-comp.module';
+import { PainelNotasComponent } from './painel-notas/painel-notas.component';
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { SharedCompModule } from 'src/app/shared/components/shared-comp.module';
     PainelAgendaComponent,
     ListSonsComponent,
     FormAgendaComponent,
+    PainelNotasComponent,
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,8 @@ import { SharedCompModule } from 'src/app/shared/components/shared-comp.module';
     PipesModule,
     RouterModule,
     FormsModule,
-    SharedCompModule
+    SharedCompModule,
+    DragDropModule
   ],
   exports: [HomeComponent,HomeRoutingModule]
 })

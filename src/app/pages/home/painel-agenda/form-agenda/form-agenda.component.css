@@ -45,6 +45,7 @@
     background-color: transparent;
     border: none;
     transition: 0.3s;
+    color: var(--text-body);
 }
 
 .area_title input:hover{
@@ -86,6 +87,7 @@
     padding: 0.5rem 0;
     border: none;
     width: 100%;
+    color: var(--text-body);
 }
 
 .box_description textarea::placeholder{

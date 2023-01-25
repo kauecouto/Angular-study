@@ -1,0 +1,28 @@
+<div class="container">
+   <aside class="sticker_page" (click)="changePage(0)">Pagina 1</aside>
+   <aside class="sticker_page" (click)="changePage(1)">Pagina 2</aside>
+   <aside class="sticker_page" (click)="changePage(2)">Pagina 3</aside>
+   <button class="btn_new_nota" (click)="newNote()">Nova nota</button>
+    <div class="container-notes" (dragover)="getMedidas('nota')">
+            <div class="example-boundary ">
+
+                <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag *ngFor="let note of notes; let i = index">
+                    <div class="box_icon_delete">
+                        <div class="box_size">
+                            <img src="../../../../assets/image/subtration.svg" alt="diminunir-tamanho" (click)="decreaseSizeCard(i,title.value,description.value, note.size ,color)">
+                            <img src="../../../../assets/image/some.svg" alt="diminunir-tamanho" (click)="increaseSizeCard(i,title.value,description.value, note.size ,color)">
+                        </div>
+                        <img src="../../../assets/image/delete.svg" alt="image-delete"  id="delete_icon" 
+                        (click)="deleteNote(i)">
+                    </div>
+                    <div class="box_inputs" [ngStyle]="{'width.px': note.size, 'height.px': note.size}">
+                        <textarea type="text" class="title" placeholder="Titulo" name="title" #title [ngClass]="{'invalid': invalid}" value="{{note.title}}" (blur)="editNote(i,title.value,description.value, note.size ,color)" wrap="hard"></textarea>
+                        
+                        <textarea name="description"  rows="3" #description placeholder="Adicione uma discrição..."  [ngClass]="{'invalid': invalid}" value="{{note.description}}" ></textarea>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div> 
+</div>
