@@ -45,7 +45,12 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js';  // Included with Angular CLI.
+
+(window as any).__zone_symbol__PASSIVE_EVENTS = ['touchstart'];
+
+import 'zone.js/dist/zone';
+import 'zone.js';
+  // Included with Angular CLI.
 
 
 /***************************************************************************************************

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataBaseService } from 'src/app/services/data-base.service';
+require('default-passive-events');
 
 @Component({
   selector: 'app-painel-notas',
@@ -10,7 +11,7 @@ import { DataBaseService } from 'src/app/services/data-base.service';
 export class PainelNotasComponent implements OnInit {
   responsive: boolean = false
   invalid: boolean = false
-  color: string = '#FCD658'
+  color: string = '#FFFFFF'
   pages: string[] = ['Page1','Page2','Page3']
   pageActive!: string
   sizeCard: number = 0
@@ -26,7 +27,6 @@ export class PainelNotasComponent implements OnInit {
   ngOnInit(): void {
     this.route.navigate(['inicio/notas'])
     this.pageActive = this.pages[0]
-    console.log(this.pageActive)
     this.getAll()
     if(window.innerWidth <= 830){
       this.responsive = true
@@ -69,10 +69,7 @@ export class PainelNotasComponent implements OnInit {
         color: color
     }
     this.setNote()
-    
-    
   }
-
 
   getAll(changepage?:boolean){
     this.dbFirebase.getAll(`usuários/${localStorage.getItem('key')}/Registros_Notes/${this.pageActive}`).subscribe(result => {

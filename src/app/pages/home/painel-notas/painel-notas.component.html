@@ -6,25 +6,52 @@
    <aside class="sticker_page" (click)="changePage(1)" *ngIf="responsive" > 02 </aside>
    <aside class="sticker_page" (click)="changePage(2)" *ngIf="responsive" > 03 </aside>
    <button class="btn_new_nota" (click)="newNote()">Nova nota</button>
-    <div class="container-notes" (dragover)="getMedidas('nota')">
-            <div class="example-boundary ">
+    <div class="container-notes" >
+            <div class="example-boundary" *ngIf="notes">
 
                 <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag *ngFor="let note of notes; let i = index">
                     <div class="box_icon_delete">
                         <div class="box_size">
-                            <img src="../../../../assets/image/subtration.svg" alt="diminunir-tamanho" (click)="decreaseSizeCard(i,title.value,description.value, note.size ,color)">
-                            <img src="../../../../assets/image/some.svg" alt="diminunir-tamanho" (click)="increaseSizeCard(i,title.value,description.value, note.size ,color)">
+                            <img src="../../../../assets/image/subtration.svg" alt="diminunir-tamanho" (click)="decreaseSizeCard(i,title.value,description.value, note.size ,notes[i].color)">
+                            <img src="../../../../assets/image/some.svg" alt="diminunir-tamanho" (click)="increaseSizeCard(i,title.value,description.value, note.size , notes[i].color)">
+                        </div>
+                        <div class="area_color">
+                            <input type="radio" [(ngModel)]="notes[i].color" #cor1  id="cor1" 
+                            (click)="editNote(i,title.value,description.value, note.size , cor1.value)" value="#A09BFA" > 
+                            <input type="radio" [(ngModel)]="notes[i].color" #cor2  id="cor2" 
+                            (click)="editNote(i,title.value,description.value, note.size , cor2.value)"
+                            value="#A1BEFF" > 
+                            <input type="radio" [(ngModel)]="notes[i].color" #cor3 id="cor3" 
+                            (click)="editNote(i,title.value,description.value, note.size , cor3.value)"
+                            value="#FCD658" > 
+                            <input type="radio" [(ngModel)]="notes[i].color" #cor4  id="cor4" 
+                            (click)="editNote(i,title.value,description.value, note.size , cor4.value)"
+                            value="#FFB778" > 
+                            <input type="radio" [(ngModel)]="notes[i].color" #cor5  id="cor5" 
+                            (click)="editNote(i,title.value,description.value, note.size , cor5.value)"
+                            value="#FF877D" > 
+                            <input type="radio" [(ngModel)]="notes[i].color" #cor6  id="cor6" 
+                            (click)="editNote(i,title.value,description.value, note.size , cor6.value)"
+                            value="#FFFFFF" > 
+                            
                         </div>
                         <img src="../../../assets/image/delete.svg" alt="image-delete"  id="delete_icon" 
                         (click)="deleteNote(i)">
                     </div>
-                    <div class="box_inputs" [ngStyle]="{'width.px': note.size, 'height.px': note.size}">
-                        <textarea type="text" class="title" placeholder="Titulo" name="title" #title [ngClass]="{'invalid': invalid}" value="{{note.title}}" (blur)="editNote(i,title.value,description.value, note.size ,color)" wrap="hard"></textarea>
+                    <div class="box_inputs" [ngStyle]="{'width.px': note.size, 'height.px': note.size, 'background-color': note.color}">
+                        <textarea type="text" class="title" placeholder="Titulo" name="title" #title [ngClass]="{'invalid': invalid}" value="{{note.title}}"  wrap="hard"></textarea>
                         
-                        <textarea name="description"  rows="3" #description placeholder="Adicione uma discrição..."  [ngClass]="{'invalid': invalid}" value="{{note.description}}" ></textarea>
+                        <textarea name="description"  rows="3" #description placeholder="Adicione uma discrição..."  [ngClass]="{'invalid': invalid}" value="{{note.description}}" 
+                        ></textarea>
+                        <div>
+                            <button class="btn-save" 
+                            (click)="editNote(i,title.value,description.value, note.size , notes[i].color)">
+                                Salvar
+                                <img src="../../../../assets/image/check.svg" alt="imagems-save">
+                            </button>
+                        </div>
                     </div>
                 </div>
-
                 
             </div>
         </div> 

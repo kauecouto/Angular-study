@@ -48,11 +48,18 @@
     padding-top: 15px;
 }
 
-.box_nota{
-    margin: 2px;
-    padding: 20px;
-
+.area_color{
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
 }
+
+#cor1{accent-color:  #A09BFA;}
+#cor2{accent-color:  #A1BEFF;}
+#cor3{accent-color:  #FCD658;}
+#cor4{accent-color:  #FFB778;}
+#cor5{accent-color:  #FF877D;}
+#cor6{accent-color:  #FFFFFF;}
 
 .box_icon_delete{
     display: flex;
@@ -68,7 +75,6 @@
     justify-content: space-around;
     display: flex;
     align-items: center;
-    z-index: 9999 !important;
     cursor: pointer;
 }
 
@@ -80,8 +86,8 @@
 }
 
 .box_inputs{
-    min-width: 200px;
-    min-height: 200px;
+    display: grid;
+    grid-template-rows: 0.2fr 3fr 0.1fr;
     padding: 10px;
 }
 
@@ -97,8 +103,6 @@
     transition: 0.3s;
     resize: none;
     overflow: hidden;
-    
-    color: var(--text-body);
 }
 
 .title:hover{
@@ -113,7 +117,6 @@
 }
 
 .title::placeholder{
-    color: var(--text-body);
     height: 50px;
     font-size: 1.4rem;
     font-weight: 600;
@@ -122,17 +125,18 @@
 
 
 textarea{
-    height: 70%;
+    height: 90%;
     max-height: 480px;
     background-color: transparent;
     padding: 0.5rem 0;
     border: none;
     width: 100%;
-    color: var(--text-body);
+    resize: none;
+    
 }
 
 textarea::placeholder{
-    color: var(--text-body);
+    color: black;
 }
 
 textarea:focus{
@@ -147,15 +151,13 @@ textarea:focus{
 .example-box {
     border: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
-    display: inline-block;
+    display: inline-flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
     text-align: center;
     background: var(--background);
     border-radius: 4px;
     margin-right: 25px;
-    position: relative;
+    
     cursor: move;
     z-index: 1;
     box-sizing: border-box;
@@ -163,32 +165,40 @@ textarea:focus{
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
                 0 2px 2px 0 rgba(0, 0, 0, 0.14),
                 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  }
+}
   
-  .example-box:active {
+.example-box:active {
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
                 0 8px 10px 1px rgba(0, 0, 0, 0.14),
                 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-  }
+}
   
-  .example-boundary {
+.example-boundary {
     border-radius: 12px;
     overflow: auto;
     height: 100%;
-    max-width: 100%;
     border: dotted #ccc 2px;
-  }
+}
   
-  .nota{
-    position: relative;
+.nota{
     max-width: 500px;
     max-height: 400px;
-    resize: both;
-    overflow: hidden;
-    padding: 10px;
-    background-color: grey;
 }
 
-@media(max-width:830px){
-    
+.btn-save{
+    width: 75px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    padding: 5px;
+    float: right;
 }
+
+.btn-save img{
+    width: 15px;
+    margin: 0 2px;
+}
+
